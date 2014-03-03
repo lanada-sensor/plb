@@ -16,6 +16,7 @@
 #define PRINTFF(...) printf(__VA_ARGS__)
 #else
 #define PRINTF(...)
+#define PRINTFF(...)
 #endif
 
 #define DEBUG_PACKET 0
