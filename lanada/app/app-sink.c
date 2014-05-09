@@ -62,7 +62,7 @@ PROCESS(app_sink_process, "Sensor network App sink for test start");
 AUTOSTART_PROCESSES(&app_sink_process);
 /*---------------------------------------------------------------------------*/
 //static variables
-typedef enum {DATA_state, DATA_flag, SYNC_state, END_flag, ERROR} input_flag;
+typedef enum {DATA_state, DATA_flag, SYNC_flag, END_flag, ERROR} input_flag;
 static input_flag flag;
 
 static uint8_t data_backup[PACKETBUF_SIZE];
@@ -79,15 +79,19 @@ static void Data_print();
 static void
 recv_uc(struct unicast_conn *c, const rimeaddr_t *from)
 {
+	printf("\n\n\n\nrecv_uc\n\n\n\n\n");
 	uint8_t* packet_temp;
 	uint8_t check_bit;
 	packet_temp=(uint8_t*)packetbuf_dataptr();
 
 	check_bit=packet_temp[0];
 
-	if(check_bit==0x10)// check_bit == '00'
+	if(check_bit==DATA)// check_bit == '00'
 	{
 		flag = DATA_flag;
+	}
+	else if(check_bit==SYNC_END){
+		flag = END_flag;
 	}
 	else
 	{
@@ -98,25 +102,9 @@ recv_uc(struct unicast_conn *c, const rimeaddr_t *from)
 
 	return;
 
-/*	uint8_t* packet_temp;
-	uint8_t check_bit;
-	packet_temp=(uint8_t*)packetbuf_dataptr();
-//	check_bit=0;
-
-	check_bit=packet_temp[0];
-
-	if(check_bit==0x10)// check_bit == '00'
-	{
-		Data_print();
-	}
-	else
-	{
-		printf("Error occur\n");
-	}*/
 
 }
-static const struct unicast_callbacks unicast_callbacks = {recv_uc};
-static struct unicast_conn uc;
+
 
 static void
 Data_print()
@@ -149,6 +137,18 @@ Data_print()
 	printf("\n");
 
 }
+static void
+sent_uc(struct unicast_conn *c, int status, int num_tx)
+{
+	printf("sent callback [status : %d]\n",status);
+	printf("\n\n\n\nsent_uc\n\n\n\n\n");
+	if(flag == SYNC_flag){
+		flag=END_flag;
+	}
+}
+static const struct unicast_callbacks unicast_callbacks = {recv_uc,sent_uc};
+static struct unicast_conn uc;
+/*---------------------------------------------------------------------------*/
 static uint8_t
 Send(uint8_t type)
 {
@@ -167,10 +167,12 @@ Send(uint8_t type)
 
 	return 0;
 }
+
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(app_sink_process, ev, data)
 {
 	static struct etimer et;
+	int cnt =0;
 	PROCESS_EXITHANDLER(unicast_close(&uc);)
 
 	PROCESS_BEGIN();
@@ -181,8 +183,10 @@ PROCESS_THREAD(app_sink_process, ev, data)
 
 	unicast_open(&uc, 146, &unicast_callbacks);
 	printf("Sink channel open\n waiting for data\n");
+	NETSTACK_RDC.off(1);//is_sink up
 	NETSTACK_RDC.on();
 	while(1) {
+		cnt =0;
 		etimer_set(&et, CLOCK_SECOND/1000);
 		PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
 		  if(flag)
@@ -191,16 +195,23 @@ PROCESS_THREAD(app_sink_process, ev, data)
 			  switch(flag)
 			  {
 			  case DATA_flag:
-				  flag = SYNC_state;
+				  flag = SYNC_flag;
 				  packetbuf_copyfrom(data_backup,length_backup);
 				  Data_print();
 				  packetbuf_clear();
 				  Send(SYNC_START);
 				  break;
-			  case SYNC_state:
+			  case SYNC_flag:
 				  break;
 			  case END_flag:
 				  flag=DATA_state;
+
+//			  	  NETSTACK_RDC.off(0);
+				  leds_toggle(LEDS_YELLOW);
+//				  while(cnt<1)cnt++;
+//			  	  leds_off(LEDS_YELLOW);
+
+				  NETSTACK_RDC.on();
 				  break;
 			  }
 		  }

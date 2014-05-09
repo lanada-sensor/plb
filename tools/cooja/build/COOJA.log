@@ -1,0 +1,8 @@
+[13:54:10 - AWT-EventQueue-0] [GUI.java:2846] [INFO] - External tools default settings: /external_tools_linux.config
+[13:54:10 - AWT-EventQueue-0] [GUI.java:2876] [INFO] - External tools user settings: /home/user/.cooja.user.properties
+[13:54:14 - AWT-EventQueue-0] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[13:54:35 - AWT-EventQueue-0] [CompileContiki.java:140] [INFO] - > make example-broadcast.cooja TARGET=cooja 
+[13:54:51 - AWT-EventQueue-0] [CompileContiki.java:140] [INFO] - > make example-broadcast.cooja TARGET=cooja 
+[13:54:52 - AWT-EventQueue-0] [CompileContiki.java:140] [INFO] - > make clean TARGET=cooja 
+[13:54:53 - AWT-EventQueue-0] [CompileContiki.java:140] [INFO] - > make example-broadcast.cooja TARGET=cooja 
+[13:55:14 - AWT-EventQueue-0] [GUI.java:2627] [INFO] - Save command cancelled by user...

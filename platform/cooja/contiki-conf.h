@@ -85,6 +85,7 @@
 /* Network setup for IPv4 */
 #define NETSTACK_CONF_NETWORK rime_driver /* NOTE: uip_over_mesh. else: uip_driver */
 #define NETSTACK_CONF_MAC nullmac_driver
+//#define NETSTACK_CONF_RDC plb_driver
 #define NETSTACK_CONF_RDC nullrdc_driver
 #define NETSTACK_CONF_RADIO cooja_radio_driver
 #define UIP_CONF_IP_FORWARD           1

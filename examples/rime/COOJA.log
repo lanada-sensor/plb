@@ -1,0 +1,6 @@
+[13:53:08 - main] [GUI.java:1360] [INFO] - > Starting Cooja
+[13:53:08 - main] [GUI.java:2846] [INFO] - External tools default settings: /external_tools_linux.config
+[13:53:08 - main] [GUI.java:2876] [INFO] - External tools user settings: /home/user/.cooja.user.properties
+[13:53:08 - main] [GUI.java:1366] [INFO] - > Creating simulation
+[13:53:15 - AWT-EventQueue-0] [Simulation.java:423] [INFO] - Simulation random seed: 123456
+[13:53:15 - main] [GUI.java:1376] [INFO] - > Creating mote type

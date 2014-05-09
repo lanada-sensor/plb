@@ -35,23 +35,24 @@
  *         APP layer for sensor network
  * \author
  *         Jinhwan, Jung <jhjun@lanada.kaist.ac.kr>
+ *         Deawoo, Kim 	<dwkim@lanada.kast.ac.kr>
  */
 
 #include "contiki.h"
 #include "net/rime.h"
-#include "net/netstack.h" // for using netstack
-
+#include "net/netstack.h"
 #include "dev/button-sensor.h"
 #include "dev/leds.h"
-
-#include "sys/etimer.h" //KJY
-#include "ntp.h" //KJY
-#include "sclock.h" //KJY
+#include "sys/etimer.h"
+//for clock-scheme
+#include "ntp.h"
+#include "sclock.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #define DEBUGPRINT 1
 
+// define data type
 #define DATA 				0x10	// '00010000'
 #define	SYNC_START			0x20	// '00100000'
 #define	SYNC_ACK			0x42	// '01000010'
@@ -65,20 +66,17 @@ AUTOSTART_PROCESSES(&app_layer_process);
 typedef enum {DATA_flag=1, SYNC_flag, END_flag} input_flag;
 
 static uint8_t result_data;
-
 static uint8_t is_data_or_sync;
 static input_flag flag;
-
 static int clock_drift;
 static uint8_t is_sleep_mode;
-
 static uint8_t data_backup[PACKETBUF_SIZE];
 static uint8_t length_backup;
 
 //time sync
 static struct etimer et;
-static struct ntp *ntp; //KJY
-static struct sclock *sc; //KJY
+static struct ntp *ntp;
+static struct sclock *sc;
 static struct timestamp sleeptime;
 
 /*---------------------------------------------------------------------------*/
@@ -97,11 +95,12 @@ static void Sync_modifying(int);
 static void
 recv_uc(struct unicast_conn *c, const rimeaddr_t *from)
 {
+#if DEBUGPRINT
 	printf("[app] recv callback\n");
+#endif
 	uint8_t* packet_temp;
 	uint8_t check_bit;
 	packet_temp=(uint8_t*)packetbuf_dataptr();
-//	printf("datalen : %d, %x %x\n",packetbuf_datalen(),packet_temp[0],packet_temp[1]);
 
 	check_bit=packet_temp[0]; //6 right shifts
 	if(check_bit==DATA) // check_bit == '0x10'
@@ -116,7 +115,7 @@ recv_uc(struct unicast_conn *c, const rimeaddr_t *from)
 	}
 	else if(check_bit==SYNC_END) // check_bit == '0x80'
 	{
-		is_data_or_sync=SYNC_END;
+//		is_data_or_sync=SYNC_END;
 		flag=END_flag;
 	}
 	else
@@ -125,38 +124,20 @@ recv_uc(struct unicast_conn *c, const rimeaddr_t *from)
 	}
 	length_backup=packetbuf_datalen();
 	packetbuf_copyto(data_backup);
-//	printf("data_backup %x %x length : %d\n",data_backup[0],data_backup[1],length_backup);
+
 	return;
-/*	switch(is_data_or_sync)
-	{
-	case DATA: Data_aggregation();
-	Send(DATA);
-#if DEBUGPRINT
-	printf("Receiving DATA and Sending aggregation data\n");
-#endif
-	break;
-	case SYNC_ACK: clock_drift=Sync_calc();
-	Sync_modifying(clock_drift);
-	Send(SYNC_ACK);
-#if DEBUGPRINT
-	printf("Receiving SYNC and Sending a SYNC start signal\n");
-#endif
-	break;
-	case SYNC_END: is_sleep_mode=1;
-#if DEBUGPRINT
-	printf("Receiving END\n");
-#endif
-	break;
-	default:printf("exception case, ERROR occur\n");
-	break;
-	}*/
 }
+
 static void
 sent_uc(struct unicast_conn *c, int status, int num_tx)
 {
+#if DEBUGPRINT
 	printf("sent callback [status : %d]\n",status);
-	flag=END_flag;
-	//printf("unicast message sent status : %d, number of tx : %d\n message is %s\n",status,num_tx,(char*)packetbuf_dataptr());
+#endif
+	if(is_data_or_sync == SYNC_ACK){
+		flag=END_flag;
+		is_data_or_sync=SYNC_END;
+	}
 }
  //it is no longer useful
 static const struct unicast_callbacks unicast_callbacks = {recv_uc,sent_uc};//sent_uc is not used at the present stage
@@ -308,6 +289,9 @@ PROCESS_THREAD(app_layer_process, ev, data)
 
 	while(1) {
 		is_sleep_mode=0;
+		///////////////
+		// sensing part
+		///////////////
 		sensor_value=Sensor_start();
 		result_data=Sensor_calc(sensor_value);
 
@@ -326,19 +310,18 @@ PROCESS_THREAD(app_layer_process, ev, data)
 		//PROCESS_WAIT_EVENT_UNTIL(is_sleep_mode);
 		while(!is_sleep_mode) // can i replace it with PROCESS_WAIT_UNTIL or some PROCESS function?
 		{
-//			printf("app layer! %d\n",flag);
 			  etimer_set(&et, CLOCK_SECOND/1000);
 			  PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
 			  if(flag)
 			  {
+#if DEBUGPRINT
 				  printf("[app] flag value : %d\n",flag);
+#endif
 				  switch(flag)
 				  {
 				  case DATA_flag:
 					  flag=0;
 					  packetbuf_copyfrom(data_backup,length_backup);
-//					  printf("APP DATA_flag %x %x\n",data_backup[0],data_backup[1]);
-//					  printf("APP DATAPTR %x %x\n",((uint8_t*)packetbuf_dataptr())[0],((uint8_t*)packetbuf_dataptr())[1]);
 					  Data_aggregation();
 					  Send(DATA);
 					  break;
@@ -347,8 +330,6 @@ PROCESS_THREAD(app_layer_process, ev, data)
 					  //sync calc
 					  packetbuf_clear();
 					  packetbuf_copyfrom(data_backup,length_backup);
-//					  printf("[app] len : %d //kdw\n",packetbuf_datalen());
-//					  print_packet(packetbuf_dataptr(),packetbuf_datalen());
 					  ntp_handle_ack(ntp, packetbuf_dataptr());//KJY
 					  if (rimeaddr_node_addr.u8[0]==1 && rimeaddr_node_addr.u8[1]==0){
 						  is_sleep_mode=1;
@@ -356,8 +337,10 @@ PROCESS_THREAD(app_layer_process, ev, data)
 						  break;
 					  }
 					  packetbuf_clear();
+#if DEBUGPRINT
 					  printf("[app] Synchronized!!");
-					  print_ntp(ntp);
+#endif
+//					  print_ntp(ntp);
 					  Send(SYNC_START);
 					  break;
 				  case END_flag:
@@ -368,14 +351,14 @@ PROCESS_THREAD(app_layer_process, ev, data)
 				  }
 			  }
 			//waiting
-		} //JJH55
+		}
 #if DEBUGPRINT
 		printf("[app] goto sleep mode, wake up after 21days\n");
 #endif
 		NETSTACK_RDC.off(0);
 
 	    leds_on(LEDS_RED);
-	    etimer_set(&et, CLOCK_SECOND/2);
+	    etimer_set(&et, CLOCK_SECOND);
 	    PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
 	    leds_off(LEDS_RED);
 
@@ -386,12 +369,13 @@ PROCESS_THREAD(app_layer_process, ev, data)
 	      PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
 
 	    }
+#if DEBUGPRINT
 	    printf("[app] sleep end\n");
-
+#endif
 	    leds_on(LEDS_YELLOW);
-	    etimer_set(&et, CLOCK_SECOND/2);
+	    etimer_set(&et, CLOCK_SECOND);
 	    PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
-	    leds_off(LEDS_YELLOW);
+	    leds_off(7);
 	}
 
 

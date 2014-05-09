@@ -32,12 +32,11 @@
 
 /**
  * \file
- *         A null RDC implementation that uses framer for headers.
+ *         A PLB RDC implementation for sensor network
  * \author
- *         Adam Dunkels <adam@sics.se>
- *         Niclas Finne <nfi@sics.se>
+ *         Jinhwan, Jung <jhjun@lanada.kaist.ac.kr>
+ *         Deawoo, Kim 	<dwkim@lanada.kast.ac.kr>
  */
-
 #ifndef __PLB_H__
 #define __PLB_H__
 

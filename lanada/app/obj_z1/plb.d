@@ -26,15 +26,16 @@ obj_z1/plb.o: ../../core/net/mac/plb.c ../../core/./net/mac/plb.h \
  ../../core/./net/rime/polite.h ../../core/./net/rime/rimestats.h \
  ../../core/./net/rime/rmh.h ../../core/./net/rime/route.h \
  ../../core/./net/rime/rucb.h ../../core/./net/rime/timesynch.h \
- ../../core/./net/rime/trickle.h ../../libsync/ntp.h \
- ../../libsync/sclock.h ../../libsync/timestamp.h ../../core/./contiki.h \
- ../../core/./contiki-version.h ../../core/./contiki-default-conf.h \
- ../../core/./sys/process.h ../../core/./sys/autostart.h \
- ../../core/./sys/timer.h ../../core/./sys/ctimer.h \
- ../../core/./sys/etimer.h ../../core/./sys/rtimer.h \
- ../../core/./sys/pt.h ../../core/./sys/procinit.h \
- ../../core/./sys/loader.h ../../core/./sys/clock.h \
- ../../core/./sys/energest.h ../../libsync/sclock.h
+ ../../core/./net/rime/trickle.h ../../core/./dev/leds.h \
+ ../../libsync/ntp.h ../../libsync/sclock.h ../../libsync/timestamp.h \
+ ../../core/./contiki.h ../../core/./contiki-version.h \
+ ../../core/./contiki-default-conf.h ../../core/./sys/process.h \
+ ../../core/./sys/autostart.h ../../core/./sys/timer.h \
+ ../../core/./sys/ctimer.h ../../core/./sys/etimer.h \
+ ../../core/./sys/rtimer.h ../../core/./sys/pt.h \
+ ../../core/./sys/procinit.h ../../core/./sys/loader.h \
+ ../../core/./sys/clock.h ../../core/./sys/energest.h \
+ ../../libsync/sclock.h
 ../../core/net/mac/plb.c ../../core/./net/mac/plb.h :
  ../../core/./net/mac/rdc.h ../../platform/z1/./contiki-conf.h :
  ../../platform/z1/./platform-conf.h ../../cpu/msp430/./msp430def.h :
@@ -63,12 +64,13 @@ obj_z1/plb.o: ../../core/net/mac/plb.c ../../core/./net/mac/plb.h \
  ../../core/./net/rime/polite.h ../../core/./net/rime/rimestats.h :
  ../../core/./net/rime/rmh.h ../../core/./net/rime/route.h :
  ../../core/./net/rime/rucb.h ../../core/./net/rime/timesynch.h :
- ../../core/./net/rime/trickle.h ../../libsync/ntp.h :
- ../../libsync/sclock.h ../../libsync/timestamp.h ../../core/./contiki.h :
- ../../core/./contiki-version.h ../../core/./contiki-default-conf.h :
- ../../core/./sys/process.h ../../core/./sys/autostart.h :
- ../../core/./sys/timer.h ../../core/./sys/ctimer.h :
- ../../core/./sys/etimer.h ../../core/./sys/rtimer.h :
- ../../core/./sys/pt.h ../../core/./sys/procinit.h :
- ../../core/./sys/loader.h ../../core/./sys/clock.h :
- ../../core/./sys/energest.h ../../libsync/sclock.h :
+ ../../core/./net/rime/trickle.h ../../core/./dev/leds.h :
+ ../../libsync/ntp.h ../../libsync/sclock.h ../../libsync/timestamp.h :
+ ../../core/./contiki.h ../../core/./contiki-version.h :
+ ../../core/./contiki-default-conf.h ../../core/./sys/process.h :
+ ../../core/./sys/autostart.h ../../core/./sys/timer.h :
+ ../../core/./sys/ctimer.h ../../core/./sys/etimer.h :
+ ../../core/./sys/rtimer.h ../../core/./sys/pt.h :
+ ../../core/./sys/procinit.h ../../core/./sys/loader.h :
+ ../../core/./sys/clock.h ../../core/./sys/energest.h :
+ ../../libsync/sclock.h :

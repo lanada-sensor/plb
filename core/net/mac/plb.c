@@ -5,12 +5,13 @@
 #include "sys/pt.h"
 #include "sys/rtimer.h"
 #include "net/rime.h"
+#include "dev/leds.h"
 #include "ntp.h" //KJY
 #include "sclock.h" //KJY
 #include <string.h>/*need?*/
 #include <stdio.h>
 
-#define DEBUG 1
+#define DEBUG 0
 #if DEBUG
 #define PRINTF(...) printf("[PLB] ");printf(__VA_ARGS__)
 #define PRINTFF(...) printf(__VA_ARGS__)
@@ -85,7 +86,7 @@ static int sync_state;	//kdw2
 static int send_fail; //JJH 0220
 static int send_fail_sync; //JJH 0221
 static int data_ack_check; //JJH 0224 to check data_ack for timeout_nonfail function
-
+static int is_sink;
 
 static uint16_t timeout_count;
 static uint16_t timeout_nonfail_count; //JJH 0224
@@ -194,12 +195,13 @@ static char plb_powercycle(void) {
 			PRINTF("plb_powercycle send DATA <end>\n");
 			radio_off();
 		}
-		if(send_fail || !c_wait || send_fail_sync)//1. fail to send preamble or data, 2. dest node doesn't wake up, 3. fail to send SYNC_ACK JJH 0222
+		if(send_fail || (!c_wait && !is_sink)|| send_fail_sync)//1. fail to send preamble or data, 2. dest node doesn't wake up, 3. fail to send SYNC_ACK JJH 0222
 		{
 			timeout_count++;
 			if(timeout_count==100)//after 100 powercycle, call timeout plb_function
 			{
-				PRINTF("powercycle TIMEOUT! restart beacon or sync sending!\n");
+				PRINTF("powercycle TIMEOUT! restart beacon or sync sending! %d %d %d %d\n",send_fail,c_wait,send_fail_sync,is_sink);
+				leds_toggle(LEDS_GREEN);
 				plb_timeout();
 
 			}
@@ -209,7 +211,7 @@ static char plb_powercycle(void) {
 			timeout_nonfail_count++;
 			if(timeout_nonfail_count==200)//after 200 powercycle, call timeout_nonfail function JJH 0224
 			{
-				PRINTF("powercycle TIMEOUT! not by sending fail\n");
+				PRINTF("powercycle TIMEOUT! not by sending fail %d %d\n",send_fail,send_fail_sync);
 				plb_nonfail_timeout();
 			}
 		}
@@ -668,7 +670,7 @@ static int plb_send_sync_ack(uint8_t type) //kdw sync
 	}
 
 
-	PRINTF("(sync) plb_send_sync [dst:error: %d.%d] [type: %x]\n", temp_addr->u8[0], temp_addr->u8[1], type);
+	PRINTF("(sync) plb_send_sync [dst: %d.%d] [type: %x]\n", temp_addr->u8[0], temp_addr->u8[1], type);//error???
 	sync_len = sync_hdr_len + sync_data_len;
 	if (sync_len > (int) sizeof(sync)) {
 		// Failed to send //
@@ -1054,6 +1056,17 @@ static int plb_on(void) {
 
 	} else {
 		PRINTF("already on\n");
+		has_data = 0;
+		send_req = 0;
+		wait_packet = 0;
+
+		c_wait = 0;
+		sync_state = 0;
+		send_fail=0;//JJJH 0220
+		send_fail_sync=0;//JJH 0221
+		timeout_count=0;//JJH 0220
+		timeout_nonfail_count=0;
+		data_ack_check=0;
 		return -1;
 	}
 	return 0;
@@ -1061,12 +1074,18 @@ static int plb_on(void) {
 /*-----------------------------------plb_input----------------------------------------*/
 static int plb_off(int keep_radio_on) {
 	PRINTF("plb_off\n");
+	if(keep_radio_on==1)
+	{
+		PRINTF("set is_sink up\n");
+		is_sink=1;
+	}
 	if (wait_packet) {
 		return NETSTACK_RADIO.on();
 	} else {
 		is_plb_on = 0;
 		return NETSTACK_RADIO.off();
 	}
+
 }
 /*---------------------------------------------------------------------------*/
 static void plb_timeout(void)
@@ -1090,6 +1109,12 @@ static void plb_timeout(void)
 		send_fail_sync=0;
 		timeout_count=0;
 		plb_send_sync_ack(SYNC_ACK);
+	}
+	else if(c_wait==0)
+	{
+		send_fail=0; //JJH6
+		timeout_count=0;
+		plb_beacon_sd();
 	}
 	/*else if(send_fail_sync==3)
 	{
@@ -1115,6 +1140,11 @@ static void plb_nonfail_timeout(void)
 		timeout_nonfail_count=0;
 		plb_send_sync_start();
 	}
+	else
+	{
+		timeout_nonfail_count=0;
+	}
+
 	return;
 
 }
