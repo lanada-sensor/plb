@@ -1,0 +1,2042 @@
+Archive member included because of file (symbol)
+
+contiki-z1.a(rimeaddr.o)      app.co (rimeaddr_copy)
+contiki-z1.a(rime.o)          obj_z1/contiki-z1-main.o (rime_driver)
+contiki-z1.a(announcement.o)  contiki-z1.a(rime.o) (announcement_init)
+contiki-z1.a(broadcast-annou)
+                              contiki-z1.a(rime.o) (broadcast_announcement_init)
+contiki-z1.a(broadcast.o)     contiki-z1.a(broadcast-annou) (broadcast_open)
+contiki-z1.a(unicast.o)       app.co (unicast_open)
+contiki-z1.a(abc.o)           contiki-z1.a(broadcast.o) (abc_open)
+contiki-z1.a(chameleon.o)     contiki-z1.a(rime.o) (chameleon_init)
+contiki-z1.a(channel.o)       contiki-z1.a(chameleon.o) (channel_init)
+contiki-z1.a(chameleon-bitop)
+                              contiki-z1.a(chameleon.o) (chameleon_bitopt)
+contiki-z1.a(nullmac.o)       obj_z1/contiki-z1-main.o (nullmac_driver)
+contiki-z1.a(plb.o)           app.co (plb_driver)
+contiki-z1.a(process.o)       obj_z1/contiki-z1-main.o (process_init)
+contiki-z1.a(autostart.o)     obj_z1/contiki-z1-main.o (autostart_start)
+contiki-z1.a(serial-line.o)   obj_z1/contiki-z1-main.o (serial_line_input_byte)
+contiki-z1.a(list.o)          contiki-z1.a(announcement.o) (list_init)
+contiki-z1.a(etimer.o)        obj_z1/contiki-z1-main.o (etimer_process)
+contiki-z1.a(ctimer.o)        obj_z1/contiki-z1-main.o (ctimer_init)
+contiki-z1.a(energest.o)      obj_z1/contiki-z1-main.o (energest_init)
+contiki-z1.a(rtimer.o)        obj_z1/contiki-z1-main.o (rtimer_init)
+contiki-z1.a(random.o)        app.co (random_rand)
+contiki-z1.a(ringbuf.o)       contiki-z1.a(serial-line.o) (ringbuf_init)
+contiki-z1.a(packetbuf.o)     app.co (packetbuf_copyto)
+contiki-z1.a(queuebuf.o)      contiki-z1.a(rime.o) (queuebuf_init)
+contiki-z1.a(contiki-z1-plat)
+                              obj_z1/contiki-z1-main.o (init_platform)
+contiki-z1.a(msp430.o)        obj_z1/contiki-z1-main.o (msp430_cpu_init)
+contiki-z1.a(leds.o)          obj_z1/contiki-z1-main.o (leds_init)
+contiki-z1.a(watchdog.o)      obj_z1/contiki-z1-main.o (watchdog_start)
+contiki-z1.a(xmem.o)          obj_z1/contiki-z1-main.o (xmem_init)
+contiki-z1.a(spi.o)           contiki-z1.a(xmem.o) (spi_init)
+contiki-z1.a(cc2420.o)        obj_z1/contiki-z1-main.o (cc2420_set_channel)
+contiki-z1.a(cc2420-arch.o)   contiki-z1.a(cc2420.o) (cc2420_arch_init)
+contiki-z1.a(node-id.o)       obj_z1/contiki-z1-main.o (node_id_restore)
+contiki-z1.a(sensors.o)       contiki-z1.a(contiki-z1-plat) (sensors_process)
+contiki-z1.a(button-sensor.o)
+                              app.co (button_sensor)
+contiki-z1.a(uart0-putchar.o)
+                              obj_z1/ntp.o (putchar)
+contiki-z1.a(slip_uart0.o)    obj_z1/uart.o (slip_arch_writeb)
+contiki-z1.a(adxl345.o)       obj_z1/contiki-z1-main.o (accm_init)
+contiki-z1.a(clock.o)         obj_z1/sclock.o (clock_time)
+contiki-z1.a(leds-arch.o)     contiki-z1.a(leds.o) (leds_arch_init)
+contiki-z1.a(rtimer-arch.o)   contiki-z1.a(rtimer.o) (rtimer_arch_init)
+contiki-z1.a(mac.o)           contiki-z1.a(plb.o) (mac_call_sent_callback)
+contiki-z1.a(framer-802154.o)
+                              contiki-z1.a(plb.o) (framer_802154)
+contiki-z1.a(memb.o)          contiki-z1.a(queuebuf.o) (memb_init)
+contiki-z1.a(timer.o)         contiki-z1.a(etimer.o) (timer_set)
+contiki-z1.a(slip.o)          contiki-z1.a(slip_uart0.o) (slip_input_byte)
+contiki-z1.a(i2cmaster.o)     contiki-z1.a(adxl345.o) (i2c_receiveinit)
+contiki-z1.a(frame802154.o)   contiki-z1.a(framer-802154.o) (frame802154_hdrlen)
+contiki-z1.a(tcpip.o)         contiki-z1.a(slip.o) (tcpip_input)
+contiki-z1.a(uip-fw.o)        contiki-z1.a(tcpip.o) (uip_fw_forward)
+contiki-z1.a(uip.o)           contiki-z1.a(slip.o) (uip_aligned_buf)
+contiki-z1.a(uip-ipchksum.o)  contiki-z1.a(slip.o) (uip_ipchksum)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_mulsi3.o)
+                              app.co (__mulsi3)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+                              obj_z1/sclock.o (__udivhi3)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+                              obj_z1/sclock.o (__udivsi3)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+                              contiki-z1.a(plb.o) (malloc)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+                              app.co (printf)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o) (vuprintf)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+                              app.co (puts)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+                              contiki-z1.a(random.o) (rand)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+                              contiki-z1.a(sensors.o) (strncmp)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+                              contiki-z1.a(rimeaddr.o) (memcmp)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+                              obj_z1/timestamp.o (memcpy)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+                              obj_z1/timestamp.o (memset)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o) (__udivdi3)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o (_reset_vector__)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__watchdog_support)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__init_stack)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__low_level_init)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__do_copy_data)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__do_clear_bss)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__stop_progExec__)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (_endless_loop__)
+/usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+                              /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o (_unexpected_)
+
+Allocating common symbols
+Common symbol       size              file
+
+CWT_hp_b            0x1c              app.co
+CWT_second_sig_base_addr
+                    0x4               app.co
+energest_total_time
+                    0x30              contiki-z1.a(energest.o)
+CWT_up_square_acc   0x4               app.co
+cc2420_last_rssi    0x1               contiki-z1.a(cc2420.o)
+CWT_coef_dw_mat     0x3de             app.co
+accm_int2_cb        0x2               contiki-z1.a(adxl345.o)
+sel_num             0x2               app.co
+CWT_lfreq           0x4               app.co
+CWT_hfreq           0x4               app.co
+CWT_first_sig_base_addr
+                    0x4               app.co
+CWT_in_data         0x74              app.co
+cc2420_packets_read
+                    0x2               contiki-z1.a(cc2420.o)
+tcpip_is_forwarding
+                    0x1               contiki-z1.a(tcpip.o)
+CWT_hp_a            0x1c              app.co
+uip_len             0x2               contiki-z1.a(uip.o)
+CWT_data_y_prev     0x1c              app.co
+cc2420_packets_seen
+                    0x2               contiki-z1.a(cc2420.o)
+energest_total_count
+                    0x2               contiki-z1.a(energest.o)
+CWT_UART_addr_H3bit
+                    0x1               app.co
+cc2420_sfd_start_time
+                    0x2               contiki-z1.a(cc2420.o)
+cc2420_time_of_departure
+                    0x2               contiki-z1.a(cc2420.o)
+CWT_up_square_mean  0x4               app.co
+cc2420_time_of_arrival
+                    0x2               contiki-z1.a(cc2420.o)
+slip_active         0x1               contiki-z1.a(slip.o)
+CWT_out_up          0x4               app.co
+CWT_data_x_prev     0x1c              app.co
+CWT_up_variance     0x84              app.co
+uip_sappdata        0x2               contiki-z1.a(uip.o)
+energest_current_mode
+                    0xc               contiki-z1.a(energest.o)
+packetbuf_addrs     0x8               contiki-z1.a(packetbuf.o)
+uip_acc32           0x4               contiki-z1.a(uip.o)
+CWT_k               0x4               app.co
+CWT_UART_rdata_L8bit
+                    0x1               app.co
+rimeaddr_node_addr  0x2               contiki-z1.a(rimeaddr.o)
+process_maxevents   0x1               contiki-z1.a(process.o)
+CWT_out_dw_01       0x4               app.co
+r_char              0x1               app.co
+CWT_UART_cmd_Hf_tx  0x1               app.co
+transmit_data1      0x1               contiki-z1.a(i2cmaster.o)
+CWT_delay_k         0x4               app.co
+CWT_UART_tx_freq    0x1               app.co
+rx_byte_ctr         0x1               contiki-z1.a(i2cmaster.o)
+uip_aligned_buf     0x6c              contiki-z1.a(uip.o)
+uip_flags           0x1               contiki-z1.a(uip.o)
+int2_event          0x1               contiki-z1.a(adxl345.o)
+CWT_up_acc          0x4               app.co
+tx_buf_ptr          0x2               contiki-z1.a(i2cmaster.o)
+tx_byte_ctr         0x1               contiki-z1.a(i2cmaster.o)
+cc2420_last_correlation
+                    0x1               contiki-z1.a(cc2420.o)
+UART_wait_time_index
+                    0x4               app.co
+accm_int1_cb        0x2               contiki-z1.a(adxl345.o)
+CWT_up_mean_square  0x4               app.co
+cc2420_authority_level_of_sender
+                    0x2               contiki-z1.a(cc2420.o)
+uip_udp_conn        0x2               contiki-z1.a(uip.o)
+CWT_hpf_out         0x4               app.co
+i                   0x2               app.co
+va                  0x2               app.co
+packetbuf_attrs     0x36              contiki-z1.a(packetbuf.o)
+CWT_up_mean         0x4               app.co
+CWT_j               0x4               app.co
+receive_data        0x1               contiki-z1.a(i2cmaster.o)
+CWT_LRS             0x4               app.co
+cc2420_sfd_counter  0x1               contiki-z1.a(cc2420.o)
+CWT_hpf_out_01      0x4               app.co
+CWT_base_addr       0x4               app.co
+uip_appdata         0x2               contiki-z1.a(uip.o)
+CWT_dw_square_acc   0x4               app.co
+uip_conn            0x2               contiki-z1.a(uip.o)
+tcpip_event         0x1               contiki-z1.a(tcpip.o)
+uip_conns           0x80              contiki-z1.a(uip.o)
+CWT_X2              0x4               app.co
+CWT_UART_addr_L8bit
+                    0x1               app.co
+rx_buf              0x2               contiki-z1.a(i2cmaster.o)
+CWT_delay_cnt       0x4               app.co
+CWT_UART_cmd_datawr
+                    0x1               app.co
+CWT_dw_acc          0x4               app.co
+node_mac            0x8               contiki-z1.a(node-id.o)
+CWT_UART_addr       0x4               app.co
+CWT_dw_mean         0x4               app.co
+CWT_UART_cmd_HfLf_tx
+                    0x1               app.co
+CWT_UART_wdata_H8bit
+                    0x1               app.co
+Tx_wait_time_index  0x4               app.co
+CWT_out_dw          0x4               app.co
+CWT_i               0x4               app.co
+uip_listenports     0x10              contiki-z1.a(uip.o)
+CWT_coef_up_sel     0x78              app.co
+CWT_coef_dw_sel     0x78              app.co
+uip_draddr          0x4               contiki-z1.a(uip.o)
+CWT_coef_up_mat     0x3de             app.co
+transmit_data2      0x1               contiki-z1.a(i2cmaster.o)
+energest_current_time
+                    0x18              contiki-z1.a(energest.o)
+rx_buf_ptr          0x2               contiki-z1.a(i2cmaster.o)
+sensors_flags       0x2               obj_z1/contiki-z1-main.o
+serial_line_event_message
+                    0x1               contiki-z1.a(serial-line.o)
+CWT_UART_wdata_L8bit
+                    0x1               app.co
+CWT_dw_square_mean  0x4               app.co
+CWT_read_data       0x4               app.co
+int1_event          0x1               contiki-z1.a(adxl345.o)
+w_char              0x1               app.co
+CWT_UART_cmd_datard
+                    0x1               app.co
+CWT_dw_mean_square  0x4               app.co
+cc2420_sfd_end_time
+                    0x2               contiki-z1.a(cc2420.o)
+CWT_out_up_01       0x4               app.co
+CWT_dw_variance     0x84              app.co
+uip_netmask         0x4               contiki-z1.a(uip.o)
+sensors_event       0x1               contiki-z1.a(sensors.o)
+uip_hostaddr        0x4               contiki-z1.a(uip.o)
+CWT_UART_rdata_H8bit
+                    0x1               app.co
+CWT_UART_addr_wcmd  0x1               app.co
+CWT_UART_addr_M8bit
+                    0x1               app.co
+CWT_X1              0x4               app.co
+uip_slen            0x2               contiki-z1.a(uip.o)
+uip_udp_conns       0xa8              contiki-z1.a(uip.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+sfr              0x00000000         0x00000010
+peripheral_8bit  0x00000010         0x000000f0
+peripheral_16bit 0x00000100         0x00000100
+ram_mirror       0x00000200         0x00000800         xw
+infomem          0x00001000         0x00000100
+infod            0x00001000         0x00000040
+infoc            0x00001040         0x00000040
+infob            0x00001080         0x00000040
+infoa            0x000010c0         0x00000040
+ram              0x00001100         0x00002000         xw
+rom              0x00003100         0x0000cebe         xr
+vectors          0x0000ffc0         0x00000040
+far_rom          0x00010000         0x0000a000
+bsl              0x00000000         0x00000000
+ram2             0x00000000         0x00000000         xw
+usbram           0x00000000         0x00000000         xw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+                0x00000041                __P1SEL2 = 0x41
+                0x00000045                __P5SEL2 = 0x45
+LOAD app.co
+LOAD obj_z1/ntp.o
+LOAD obj_z1/sclock.o
+LOAD obj_z1/timestamp.o
+LOAD obj_z1/uart0.o
+LOAD obj_z1/uart.o
+LOAD obj_z1/sensing.o
+LOAD obj_z1/contiki-z1-main.o
+LOAD contiki-z1.a
+LOAD /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a
+LOAD /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a
+LOAD /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a
+LOAD /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a
+                0x00000040                PROVIDE (__info_segment_size, 0x40)
+                0x00001000                PROVIDE (__infod, 0x1000)
+                0x00001040                PROVIDE (__infoc, 0x1040)
+                0x00001080                PROVIDE (__infob, 0x1080)
+                0x000010c0                PROVIDE (__infoa, 0x10c0)
+                0x00000000                __IE1 = 0x0
+                0x00000002                __IFG1 = 0x2
+                0x00000001                __IE2 = 0x1
+                0x00000003                __IFG2 = 0x3
+                0x00000006                __UC1IE = 0x6
+                0x00000007                __UC1IFG = 0x7
+                0x000001a0                __ADC12CTL0 = 0x1a0
+                0x000001a2                __ADC12CTL1 = 0x1a2
+                0x000001a4                __ADC12IFG = 0x1a4
+                0x000001a6                __ADC12IE = 0x1a6
+                0x000001a8                __ADC12IV = 0x1a8
+                0x00000140                __ADC12MEM0 = 0x140
+                0x00000142                __ADC12MEM1 = 0x142
+                0x00000144                __ADC12MEM2 = 0x144
+                0x00000146                __ADC12MEM3 = 0x146
+                0x00000148                __ADC12MEM4 = 0x148
+                0x0000014a                __ADC12MEM5 = 0x14a
+                0x0000014c                __ADC12MEM6 = 0x14c
+                0x0000014e                __ADC12MEM7 = 0x14e
+                0x00000150                __ADC12MEM8 = 0x150
+                0x00000152                __ADC12MEM9 = 0x152
+                0x00000154                __ADC12MEM10 = 0x154
+                0x00000156                __ADC12MEM11 = 0x156
+                0x00000158                __ADC12MEM12 = 0x158
+                0x0000015a                __ADC12MEM13 = 0x15a
+                0x0000015c                __ADC12MEM14 = 0x15c
+                0x0000015e                __ADC12MEM15 = 0x15e
+                0x00000080                __ADC12MCTL0 = 0x80
+                0x00000081                __ADC12MCTL1 = 0x81
+                0x00000082                __ADC12MCTL2 = 0x82
+                0x00000083                __ADC12MCTL3 = 0x83
+                0x00000084                __ADC12MCTL4 = 0x84
+                0x00000085                __ADC12MCTL5 = 0x85
+                0x00000086                __ADC12MCTL6 = 0x86
+                0x00000087                __ADC12MCTL7 = 0x87
+                0x00000088                __ADC12MCTL8 = 0x88
+                0x00000089                __ADC12MCTL9 = 0x89
+                0x0000008a                __ADC12MCTL10 = 0x8a
+                0x0000008b                __ADC12MCTL11 = 0x8b
+                0x0000008c                __ADC12MCTL12 = 0x8c
+                0x0000008d                __ADC12MCTL13 = 0x8d
+                0x0000008e                __ADC12MCTL14 = 0x8e
+                0x0000008f                __ADC12MCTL15 = 0x8f
+                0x00000056                __DCOCTL = 0x56
+                0x00000057                __BCSCTL1 = 0x57
+                0x00000058                __BCSCTL2 = 0x58
+                0x00000053                __BCSCTL3 = 0x53
+                0x00000059                __CACTL1 = 0x59
+                0x0000005a                __CACTL2 = 0x5a
+                0x0000005b                __CAPD = 0x5b
+                0x000001c0                __DAC12_0CTL = 0x1c0
+                0x000001c2                __DAC12_1CTL = 0x1c2
+                0x000001c8                __DAC12_0DAT = 0x1c8
+                0x000001ca                __DAC12_1DAT = 0x1ca
+                0x00000122                __DMACTL0 = 0x122
+                0x00000124                __DMACTL1 = 0x124
+                0x00000126                __DMAIV = 0x126
+                0x000001d0                __DMA0CTL = 0x1d0
+                0x000001dc                __DMA1CTL = 0x1dc
+                0x000001e8                __DMA2CTL = 0x1e8
+                0x000001d2                __DMA0SA = 0x1d2
+                0x000001d2                __DMA0SAL = 0x1d2
+                0x000001d6                __DMA0DA = 0x1d6
+                0x000001d6                __DMA0DAL = 0x1d6
+                0x000001da                __DMA0SZ = 0x1da
+                0x000001de                __DMA1SA = 0x1de
+                0x000001de                __DMA1SAL = 0x1de
+                0x000001e2                __DMA1DA = 0x1e2
+                0x000001e2                __DMA1DAL = 0x1e2
+                0x000001e6                __DMA1SZ = 0x1e6
+                0x000001ea                __DMA2SA = 0x1ea
+                0x000001ea                __DMA2SAL = 0x1ea
+                0x000001ee                __DMA2DA = 0x1ee
+                0x000001ee                __DMA2DAL = 0x1ee
+                0x000001f2                __DMA2SZ = 0x1f2
+                0x00000128                __FCTL1 = 0x128
+                0x0000012a                __FCTL2 = 0x12a
+                0x0000012c                __FCTL3 = 0x12c
+                0x000001be                __FCTL4 = 0x1be
+                0x00000130                __MPY = 0x130
+                0x00000132                __MPYS = 0x132
+                0x00000134                __MAC = 0x134
+                0x00000136                __MACS = 0x136
+                0x00000138                __OP2 = 0x138
+                0x0000013a                __RESLO = 0x13a
+                0x0000013c                __RESHI = 0x13c
+                0x0000013e                __SUMEXT = 0x13e
+                0x00000020                __P1IN = 0x20
+                0x00000021                __P1OUT = 0x21
+                0x00000022                __P1DIR = 0x22
+                0x00000023                __P1IFG = 0x23
+                0x00000024                __P1IES = 0x24
+                0x00000025                __P1IE = 0x25
+                0x00000026                __P1SEL = 0x26
+                0x00000027                __P1REN = 0x27
+                0x00000028                __P2IN = 0x28
+                0x00000029                __P2OUT = 0x29
+                0x0000002a                __P2DIR = 0x2a
+                0x0000002b                __P2IFG = 0x2b
+                0x0000002c                __P2IES = 0x2c
+                0x0000002d                __P2IE = 0x2d
+                0x0000002e                __P2SEL = 0x2e
+                0x0000002f                __P2REN = 0x2f
+                0x00000018                __P3IN = 0x18
+                0x00000019                __P3OUT = 0x19
+                0x0000001a                __P3DIR = 0x1a
+                0x0000001b                __P3SEL = 0x1b
+                0x00000010                __P3REN = 0x10
+                0x0000001c                __P4IN = 0x1c
+                0x0000001d                __P4OUT = 0x1d
+                0x0000001e                __P4DIR = 0x1e
+                0x0000001f                __P4SEL = 0x1f
+                0x00000011                __P4REN = 0x11
+                0x00000030                __P5IN = 0x30
+                0x00000031                __P5OUT = 0x31
+                0x00000032                __P5DIR = 0x32
+                0x00000033                __P5SEL = 0x33
+                0x00000012                __P5REN = 0x12
+                0x00000034                __P6IN = 0x34
+                0x00000035                __P6OUT = 0x35
+                0x00000036                __P6DIR = 0x36
+                0x00000037                __P6SEL = 0x37
+                0x00000013                __P6REN = 0x13
+                0x00000038                __P7IN = 0x38
+                0x0000003a                __P7OUT = 0x3a
+                0x0000003c                __P7DIR = 0x3c
+                0x0000003e                __P7SEL = 0x3e
+                0x00000014                __P7REN = 0x14
+                0x00000039                __P8IN = 0x39
+                0x0000003b                __P8OUT = 0x3b
+                0x0000003d                __P8DIR = 0x3d
+                0x0000003f                __P8SEL = 0x3f
+                0x00000015                __P8REN = 0x15
+                0x00000038                __PAIN = 0x38
+                0x0000003a                __PAOUT = 0x3a
+                0x0000003c                __PADIR = 0x3c
+                0x0000003e                __PASEL = 0x3e
+                0x00000014                __PAREN = 0x14
+                0x00000055                __SVSCTL = 0x55
+                0x0000012e                __TAIV = 0x12e
+                0x00000160                __TACTL = 0x160
+                0x00000162                __TACCTL0 = 0x162
+                0x00000164                __TACCTL1 = 0x164
+                0x00000166                __TACCTL2 = 0x166
+                0x00000170                __TAR = 0x170
+                0x00000172                __TACCR0 = 0x172
+                0x00000174                __TACCR1 = 0x174
+                0x00000176                __TACCR2 = 0x176
+                0x0000011e                __TBIV = 0x11e
+                0x00000180                __TBCTL = 0x180
+                0x00000182                __TBCCTL0 = 0x182
+                0x00000184                __TBCCTL1 = 0x184
+                0x00000186                __TBCCTL2 = 0x186
+                0x00000188                __TBCCTL3 = 0x188
+                0x0000018a                __TBCCTL4 = 0x18a
+                0x0000018c                __TBCCTL5 = 0x18c
+                0x0000018e                __TBCCTL6 = 0x18e
+                0x00000190                __TBR = 0x190
+                0x00000192                __TBCCR0 = 0x192
+                0x00000194                __TBCCR1 = 0x194
+                0x00000196                __TBCCR2 = 0x196
+                0x00000198                __TBCCR3 = 0x198
+                0x0000019a                __TBCCR4 = 0x19a
+                0x0000019c                __TBCCR5 = 0x19c
+                0x0000019e                __TBCCR6 = 0x19e
+                0x00000060                __UCA0CTL0 = 0x60
+                0x00000061                __UCA0CTL1 = 0x61
+                0x00000062                __UCA0BR0 = 0x62
+                0x00000063                __UCA0BR1 = 0x63
+                0x00000064                __UCA0MCTL = 0x64
+                0x00000065                __UCA0STAT = 0x65
+                0x00000066                __UCA0RXBUF = 0x66
+                0x00000067                __UCA0TXBUF = 0x67
+                0x0000005d                __UCA0ABCTL = 0x5d
+                0x0000005e                __UCA0IRTCTL = 0x5e
+                0x0000005f                __UCA0IRRCTL = 0x5f
+                0x00000068                __UCB0CTL0 = 0x68
+                0x00000069                __UCB0CTL1 = 0x69
+                0x0000006a                __UCB0BR0 = 0x6a
+                0x0000006b                __UCB0BR1 = 0x6b
+                0x0000006c                __UCB0I2CIE = 0x6c
+                0x0000006d                __UCB0STAT = 0x6d
+                0x0000006e                __UCB0RXBUF = 0x6e
+                0x0000006f                __UCB0TXBUF = 0x6f
+                0x00000118                __UCB0I2COA = 0x118
+                0x0000011a                __UCB0I2CSA = 0x11a
+                0x000000d0                __UCA1CTL0 = 0xd0
+                0x000000d1                __UCA1CTL1 = 0xd1
+                0x000000d2                __UCA1BR0 = 0xd2
+                0x000000d3                __UCA1BR1 = 0xd3
+                0x000000d4                __UCA1MCTL = 0xd4
+                0x000000d5                __UCA1STAT = 0xd5
+                0x000000d6                __UCA1RXBUF = 0xd6
+                0x000000d7                __UCA1TXBUF = 0xd7
+                0x000000cd                __UCA1ABCTL = 0xcd
+                0x000000ce                __UCA1IRTCTL = 0xce
+                0x000000cf                __UCA1IRRCTL = 0xcf
+                0x000000d8                __UCB1CTL0 = 0xd8
+                0x000000d9                __UCB1CTL1 = 0xd9
+                0x000000da                __UCB1BR0 = 0xda
+                0x000000db                __UCB1BR1 = 0xdb
+                0x000000dc                __UCB1I2CIE = 0xdc
+                0x000000dd                __UCB1STAT = 0xdd
+                0x000000de                __UCB1RXBUF = 0xde
+                0x000000df                __UCB1TXBUF = 0xdf
+                0x0000017c                __UCB1I2COA = 0x17c
+                0x0000017e                __UCB1I2CSA = 0x17e
+                0x00000120                __WDTCTL = 0x120
+                0x000010c0                __TLV_CHECKSUM = 0x10c0
+                0x000010f6                __TLV_DCO_30_TAG = 0x10f6
+                0x000010f7                __TLV_DCO_30_LEN = 0x10f7
+                0x000010da                __TLV_ADC12_1_TAG = 0x10da
+                0x000010db                __TLV_ADC12_1_LEN = 0x10db
+                0x000010f8                __CALDCO_16MHZ = 0x10f8
+                0x000010f9                __CALBC1_16MHZ = 0x10f9
+                0x000010fa                __CALDCO_12MHZ = 0x10fa
+                0x000010fb                __CALBC1_12MHZ = 0x10fb
+                0x000010fc                __CALDCO_8MHZ = 0x10fc
+                0x000010fd                __CALBC1_8MHZ = 0x10fd
+                0x000010fe                __CALDCO_1MHZ = 0x10fe
+                0x000010ff                __CALBC1_1MHZ = 0x10ff
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.text
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+
+.rela.text
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+
+.rel.rodata
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+
+.rela.rodata
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+
+.rel.data
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+
+.rela.data
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+
+.rel.bss
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+
+.rela.bss
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00003100     0xb9d0
+                0x00003100                . = ALIGN (0x2)
+ *(.init .init.*)
+ *(.init0)
+ .init0         0x00003100        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+                0x00003100                _reset_vector__
+ *(.init1)
+ .init1         0x00003100        0xc /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+                0x00003100                __watchdog_support
+ *(.init2)
+ .init2         0x0000310c        0x4 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+                0x0000310c                __init_stack
+ *(.init3)
+ .init3         0x00003110        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+                0x00003110                __low_level_init
+ *(.init4)
+ .init4         0x00003110       0x18 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+                0x00003110                __do_copy_data
+ .init4         0x00003128       0x16 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+                0x00003128                __do_clear_bss
+ *(.init5)
+ *(.init6)
+ *(.init7)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000313e      0x302 obj_z1/contiki-z1-main.o
+                0x0000313e                main
+ *(.fini9)
+ .fini9         0x00003440        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+                0x00003440                __stop_progExec__
+ *(.fini8)
+ *(.fini7)
+ *(.fini6)
+ *(.fini5)
+ *(.fini4)
+ *(.fini3)
+ *(.fini2)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00003440        0x6 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+                0x00003440                _endless_loop__
+ *(.fini .fini.*)
+                0x00003446                . = ALIGN (0x2)
+                0x00003446                __ctors_start = .
+ *(.ctors)
+                0x00003446                __ctors_end = .
+                0x00003446                __dtors_start = .
+ *(.dtors)
+                0x00003446                __dtors_end = .
+                0x00003446                . = ALIGN (0x2)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x00003446        0x4 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+                0x00003446                __isr_14
+                0x00003446                __isr_4
+                0x00003446                __isr_29
+                0x00003446                __isr_11
+                0x00003446                __isr_5
+                0x00003446                __isr_2
+                0x00003446                __isr_10
+                0x00003446                __isr_7
+                0x00003446                __isr_0
+                0x00003446                __isr_28
+                0x00003446                __isr_8
+                0x00003446                __isr_20
+                0x00003446                __isr_3
+                0x00003446                __isr_12
+                0x00003446                __isr_13
+                0x00003446                __isr_27
+                0x00003446                __isr_9
+                0x00003446                __isr_30
+                0x00003446                __isr_6
+                0x00003446                __isr_22
+                0x00003446                __isr_1
+                0x00003446                __isr_15
+                0x00003446                __isr_21
+ .text.crt0     0x0000344a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .text          0x0000344a     0x11ea app.co
+ .text          0x00004634      0x412 obj_z1/ntp.o
+                0x00004634                print_packet
+                0x0000468a                ntp_create
+                0x00004692                ntp_init
+                0x000046c2                ntp_put_t1
+                0x000046e8                ntp_put_t2
+                0x00004712                ntp_put_t3
+                0x0000473c                ntp_make_request
+                0x00004742                ntp_make_ack
+                0x0000477c                ntp_calc
+                0x00004990                ntp_handle_ack
+                0x000049f8                print_ntp
+ .text          0x00004a46      0x49e obj_z1/sclock.o
+                0x00004a46                sclock_create
+                0x00004a5e                sclock_init
+                0x00004a94                sclock_update
+                0x00004b5c                sclock_now
+                0x00004b72                sclock_tick_to_timestamp
+                0x00004cb4                sclock_rtimer_set
+                0x00004d42                sclock_hold_time
+                0x00004dec                sclock_etimer_set
+                0x00004e88                sclock_etimer_set_long
+ .text          0x00004ee4      0xa8c obj_z1/timestamp.o
+                0x00004ee4                timestamp_arrange
+                0x000050dc                timestamp_is_overflow
+                0x0000511c                timestamp_is_empty
+                0x00005140                timestamp_init
+                0x0000515e                timestamp_add
+                0x0000518c                timestamp_plus
+                0x000051e6                timestamp_subtract
+                0x000052b0                timestamp_minus
+                0x0000537e                timestamp_divide
+                0x000054a6                packet_get_index
+                0x000054c2                timestamp_to_packet
+                0x00005646                timestamp_from_packet
+                0x0000588a                timestamp_cmp
+                0x00005904                timestamp_cpy
+                0x0000592e                print_timestamp
+ .text          0x00005970       0x6a obj_z1/uart0.o
+                0x00005970                uart0_active
+                0x0000597e                uart0_set_input
+                0x00005984                uart0_writeb
+                0x0000599a                uart0_init
+ .text          0x000059da       0x14 obj_z1/uart.o
+                0x000059da                UART_out
+                0x000059e4                UART_input_callback
+ .text          0x000059ee     0x29c0 obj_z1/sensing.o
+                0x000059ee                InitSensor
+ .text          0x000083ae        0x6 obj_z1/contiki-z1-main.o
+                0x000083ae                uip_log
+ .text          0x000083b4       0x2a contiki-z1.a(rimeaddr.o)
+                0x000083b4                rimeaddr_copy
+                0x000083c0                rimeaddr_cmp
+                0x000083d2                rimeaddr_set_node_addr
+ .text          0x000083de       0xd8 contiki-z1.a(rime.o)
+                0x0000847a                rime_sniffer_add
+                0x00008486                rime_sniffer_remove
+                0x00008492                rime_output
+ .text          0x000084b6      0x114 contiki-z1.a(announcement.o)
+                0x000084b6                announcement_init
+                0x000084c0                announcement_register
+                0x000084fa                announcement_remove
+                0x00008506                announcement_remove_value
+                0x00008528                announcement_set_value
+                0x00008550                announcement_bump
+                0x00008572                announcement_listen
+                0x0000857e                announcement_register_listen_callback
+                0x00008584                announcement_register_observer_callback
+                0x0000858a                announcement_list
+                0x00008594                announcement_heard
+ .text          0x000085ca      0x1bc contiki-z1.a(broadcast-annou)
+                0x00008716                broadcast_announcement_init
+                0x0000875a                broadcast_announcement_stop
+                0x0000877c                broadcast_announcement_beacon_interval
+ .text          0x00008786       0x78 contiki-z1.a(broadcast.o)
+                0x000087bc                broadcast_open
+                0x000087de                broadcast_close
+                0x000087e4                broadcast_send
+ .text          0x000087fe       0x78 contiki-z1.a(unicast.o)
+                0x00008838                unicast_open
+                0x0000885a                unicast_close
+                0x00008860                unicast_send
+ .text          0x00008876       0x48 contiki-z1.a(abc.o)
+                0x00008876                abc_open
+                0x00008894                abc_close
+                0x0000889a                abc_send
+                0x000088a0                abc_input
+                0x000088ae                abc_sent
+ .text          0x000088be       0x38 contiki-z1.a(chameleon.o)
+                0x000088be                chameleon_init
+                0x000088c4                chameleon_parse
+                0x000088d4                chameleon_create
+                0x000088f0                chameleon_hdrsize
+ .text          0x000088f6       0x66 contiki-z1.a(channel.o)
+                0x000088f6                channel_init
+                0x00008900                channel_open
+                0x00008910                channel_close
+                0x0000891c                channel_lookup
+                0x0000893c                channel_set_attributes
+ .text          0x0000895c      0x2ec contiki-z1.a(chameleon-bitop)
+                0x00008972                get_bits_in_byte
+                0x000089a8                get_bits
+                0x00008ae6                set_bits_in_byte
+                0x00008b10                set_bits
+ .text          0x00008c48       0x1e contiki-z1.a(nullmac.o)
+ .text          0x00008c66      0x8a4 contiki-z1.a(plb.o)
+ .text          0x0000950a      0x2a0 contiki-z1.a(process.o)
+                0x00009606                process_alloc_event
+                0x00009614                process_exit
+                0x0000961e                process_init
+                0x0000963a                process_run
+                0x000096de                process_nevents
+                0x000096ec                process_post
+                0x0000973c                process_post_synch
+                0x0000974e                process_start
+                0x00009784                process_poll
+                0x0000979c                process_is_running
+ .text          0x000097aa       0x2a contiki-z1.a(autostart.o)
+                0x000097aa                autostart_start
+                0x000097c0                autostart_exit
+ .text          0x000097d4      0x104 contiki-z1.a(serial-line.o)
+                0x00009872                serial_line_input_byte
+                0x000098bc                serial_line_init
+ .text          0x000098d8       0xec contiki-z1.a(list.o)
+                0x000098d8                list_init
+                0x000098de                list_head
+                0x000098e2                list_copy
+                0x000098e8                list_tail
+                0x000098fa                list_chop
+                0x00009914                list_pop
+                0x00009922                list_remove
+                0x00009956                list_push
+                0x0000996c                list_add
+                0x00009992                list_length
+                0x000099a2                list_insert
+                0x000099b8                list_item_next
+ .text          0x000099c4      0x258 contiki-z1.a(etimer.o)
+                0x00009a34                etimer_request_poll
+                0x00009b42                etimer_set
+                0x00009b54                etimer_reset
+                0x00009b66                etimer_restart
+                0x00009b78                etimer_adjust
+                0x00009b92                etimer_expired
+                0x00009ba0                etimer_expiration_time
+                0x00009bb4                etimer_start_time
+                0x00009bbc                etimer_pending
+                0x00009bc8                etimer_next_expiration_time
+                0x00009bde                etimer_stop
+ .text          0x00009c1c      0x1ce contiki-z1.a(ctimer.o)
+                0x00009cbc                ctimer_init
+                0x00009cd4                ctimer_set
+                0x00009d26                ctimer_reset
+                0x00009d5c                ctimer_restart
+                0x00009d92                ctimer_stop
+                0x00009dba                ctimer_expired
+ .text          0x00009dea       0xaa contiki-z1.a(energest.o)
+                0x00009dea                energest_init
+                0x00009e0e                energest_type_time
+                0x00009e4a                energest_leveldevice_leveltime
+                0x00009e50                energest_type_set
+                0x00009e5c                energest_flush
+ .text          0x00009e94       0x50 contiki-z1.a(rtimer.o)
+                0x00009e94                rtimer_init
+                0x00009e9a                rtimer_set
+                0x00009ebe                rtimer_run_next
+ .text          0x00009ee4        0xc contiki-z1.a(random.o)
+                0x00009ee4                random_init
+                0x00009eea                random_rand
+ .text          0x00009ef0       0x94 contiki-z1.a(ringbuf.o)
+                0x00009ef0                ringbuf_init
+                0x00009f04                ringbuf_put
+                0x00009f3c                ringbuf_get
+                0x00009f6a                ringbuf_size
+                0x00009f72                ringbuf_elements
+ .text          0x00009f84      0x216 contiki-z1.a(packetbuf.o)
+                0x00009f84                packetbuf_clear_hdr
+                0x00009f8c                packetbuf_copyto_hdr
+                0x00009fa8                packetbuf_copyto
+                0x00009fee                packetbuf_hdr_remove
+                0x00009ff4                packetbuf_hdrreduce
+                0x0000a00e                packetbuf_set_datalen
+                0x0000a014                packetbuf_dataptr
+                0x0000a022                packetbuf_hdrptr
+                0x0000a02c                packetbuf_is_reference
+                0x0000a03a                packetbuf_compact
+                0x0000a082                packetbuf_reference_ptr
+                0x0000a088                packetbuf_datalen
+                0x0000a08e                packetbuf_hdrlen
+                0x0000a098                packetbuf_totlen
+                0x0000a0a8                packetbuf_hdralloc
+                0x0000a0d2                packetbuf_attr_clear
+                0x0000a0fe                packetbuf_clear
+                0x0000a118                packetbuf_reference
+                0x0000a12e                packetbuf_copyfrom
+                0x0000a158                packetbuf_attr_copyto
+                0x0000a178                packetbuf_attr_copyfrom
+ .text          0x0000a19a      0x1a6 contiki-z1.a(queuebuf.o)
+                0x0000a19a                queuebuf_init
+                0x0000a1b4                queuebuf_new_from_packetbuf
+                0x0000a22e                queuebuf_update_attr_from_packetbuf
+                0x0000a240                queuebuf_free
+                0x0000a280                queuebuf_to_packetbuf
+                0x0000a2ea                queuebuf_dataptr
+                0x0000a31c                queuebuf_datalen
+                0x0000a322                queuebuf_addr
+                0x0000a330                queuebuf_attr
+                0x0000a33e                queuebuf_debug_print
+ .text          0x0000a340        0xc contiki-z1.a(contiki-z1-plat)
+                0x0000a340                init_platform
+ .text          0x0000a34c       0xd2 contiki-z1.a(msp430.o)
+                0x0000a34c                msp430_init_dco
+                0x0000a374                msp430_quick_synch_dco
+                0x0000a3f0                msp430_cpu_init
+                0x0000a416                splhigh_
+ .text          0x0000a41e      0x168 contiki-z1.a(leds.o)
+                0x0000a516                leds_init
+                0x0000a524                leds_get
+                0x0000a52a                leds_on
+                0x0000a53e                leds_off
+                0x0000a552                leds_invert
+                0x0000a55c                leds_toggle
+                0x0000a562                leds_blink
+ .text          0x0000a586       0x54 contiki-z1.a(watchdog.o)
+                0x0000a586                watchdog_start
+                0x0000a59a                watchdog_periodic
+                0x0000a5ac                watchdog_stop
+                0x0000a5c2                watchdog_init
+                0x0000a5d4                watchdog_reboot
+ .text          0x0000a5da      0x30a contiki-z1.a(xmem.o)
+                0x0000a646                xmem_init
+                0x0000a664                xmem_pread
+                0x0000a726                xmem_pwrite
+                0x0000a83a                xmem_erase
+ .text          0x0000a8e4       0x32 contiki-z1.a(spi.o)
+                0x0000a8e4                spi_init
+ .text          0x0000a916      0x9d0 contiki-z1.a(cc2420.o)
+                0x0000ac12                cc2420_on
+                0x0000ac34                cc2420_off
+                0x0000adf4                cc2420_get_channel
+                0x0000adfa                cc2420_set_channel
+                0x0000ae72                cc2420_set_pan_addr
+                0x0000af92                cc2420_init
+                0x0000b05c                cc2420_interrupt
+                0x0000b07a                cc2420_set_txpower
+                0x0000b088                cc2420_get_txpower
+                0x0000b24e                cc2420_rssi
+                0x0000b2ac                cc2420_cca_valid
+                0x0000b2d0                cc2420_set_cca_threshold
+ .text          0x0000b2e6       0x1a contiki-z1.a(cc2420-arch.o)
+                0x0000b2e6                cc2420_arch_init
+ .text          0x0000b300       0x96 contiki-z1.a(node-id.o)
+                0x0000b300                node_id_restore
+                0x0000b34c                node_id_burn
+ .text          0x0000b396      0x156 contiki-z1.a(sensors.o)
+                0x0000b458                sensors_first
+                0x0000b45e                sensors_next
+                0x0000b482                sensors_changed
+                0x0000b4ac                sensors_find
+ .text          0x0000b4ec       0x86 contiki-z1.a(button-sensor.o)
+ .text          0x0000b572       0x10 contiki-z1.a(uart0-putchar.o)
+                0x0000b572                putchar
+ .text          0x0000b582       0x10 contiki-z1.a(slip_uart0.o)
+                0x0000b582                slip_arch_writeb
+                0x0000b588                slip_arch_init
+ .text          0x0000b592      0x254 contiki-z1.a(adxl345.o)
+                0x0000b592                accm_write_reg
+                0x0000b5c0                accm_write_stream
+                0x0000b5ea                accm_read_reg
+                0x0000b694                accm_read_stream
+                0x0000b6e6                accm_read_axis
+                0x0000b70c                accm_set_grange
+                0x0000b730                accm_init
+                0x0000b7ba                accm_set_irq
+ .text          0x0000b7e6       0xda contiki-z1.a(clock.o)
+                0x0000b7e6                clock_time
+                0x0000b800                clock_set
+                0x0000b816                clock_fine_max
+                0x0000b81c                clock_fine
+                0x0000b828                clock_init
+                0x0000b850                clock_delay
+                0x0000b85c                clock_wait
+                0x0000b880                clock_set_seconds
+                0x0000b898                clock_seconds
+                0x0000b8b2                clock_counter
+ .text          0x0000b8c0       0x74 contiki-z1.a(leds-arch.o)
+                0x0000b8c0                leds_arch_init
+                0x0000b8ce                leds_arch_get
+                0x0000b8fc                leds_arch_set
+ .text          0x0000b934       0x22 contiki-z1.a(rtimer-arch.o)
+                0x0000b934                rtimer_arch_init
+                0x0000b942                rtimer_arch_now
+                0x0000b950                rtimer_arch_schedule
+ .text          0x0000b956       0x14 contiki-z1.a(mac.o)
+                0x0000b956                mac_call_sent_callback
+ .text          0x0000b96a      0x1b2 contiki-z1.a(framer-802154.o)
+ .text          0x0000bb1c       0xd8 contiki-z1.a(memb.o)
+                0x0000bb1c                memb_init
+                0x0000bb52                memb_alloc
+                0x0000bb90                memb_free
+                0x0000bbca                memb_inmemb
+ .text          0x0000bbf4       0x8c contiki-z1.a(timer.o)
+                0x0000bbf4                timer_set
+                0x0000bc10                timer_reset
+                0x0000bc1e                timer_restart
+                0x0000bc32                timer_expired
+                0x0000bc5c                timer_remaining
+ .text          0x0000bc80      0x35e contiki-z1.a(slip.o)
+                0x0000bc80                slip_set_input_callback
+                0x0000bc86                slip_send
+                0x0000bce0                slip_write
+                0x0000bf22                slip_input_byte
+ .text          0x0000bfde       0xfa contiki-z1.a(i2cmaster.o)
+                0x0000bfde                i2c_receiveinit
+                0x0000c012                i2c_transmitinit
+                0x0000c040                i2c_receive_n
+                0x0000c07e                i2c_busy
+                0x0000c088                i2c_enable
+                0x0000c0aa                i2c_disable
+                0x0000c0c4                i2c_transmit_n
+ .text          0x0000c0d8      0x366 contiki-z1.a(frame802154.o)
+                0x0000c164                frame802154_hdrlen
+                0x0000c192                frame802154_create
+                0x0000c2c8                frame802154_parse
+ .text          0x0000c43e      0x370 contiki-z1.a(tcpip.o)
+                0x0000c454                tcpip_output
+                0x0000c61c                tcpip_set_outputfunc
+                0x0000c622                tcp_unlisten
+                0x0000c654                tcp_listen
+                0x0000c68e                tcp_attach
+                0x0000c69a                udp_attach
+                0x0000c6a6                udp_new
+                0x0000c6c0                udp_broadcast_new
+                0x0000c6ee                tcpip_input
+                0x0000c700                tcpip_poll_udp
+                0x0000c70e                tcpip_poll_tcp
+                0x0000c71c                tcp_connect
+                0x0000c73e                tcpip_uipcall
+ .text          0x0000c7ae      0x28e contiki-z1.a(uip-fw.o)
+                0x0000c7ae                uip_fw_init
+                0x0000c7ca                uip_fw_output
+                0x0000c8b8                uip_fw_forward
+                0x0000ca0e                uip_fw_register
+                0x0000ca1a                uip_fw_default
+                0x0000ca20                uip_fw_periodic
+ .text          0x0000ca3c      0xff6 contiki-z1.a(uip.o)
+                0x0000cab0                uip_setipid
+                0x0000cab6                uip_add32
+                0x0000cb42                uip_chksum
+                0x0000cb5a                uip_tcpchksum
+                0x0000cb64                uip_udpchksum
+                0x0000cb6e                uip_init
+                0x0000cbb4                uip_connect
+                0x0000ccaa                uip_udp_new
+                0x0000cd58                uip_unlisten
+                0x0000cd82                uip_listen
+                0x0000cdae                uip_process
+                0x0000d9d0                uip_htons
+                0x0000d9dc                uip_htonl
+                0x0000da06                uip_send
+ .text          0x0000da32       0x32 contiki-z1.a(uip-ipchksum.o)
+                0x0000da32                uip_ipchksum
+ .text          0x0000da64        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_mulsi3.o)
+ .text.libgcc   0x0000da64       0x26 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_mulsi3.o)
+                0x0000da64                __mulsi3
+ .text          0x0000da8a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .text.libgcc   0x0000da8a       0x22 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+                0x0000da8a                __udivhi3
+                0x0000da8a                __ext_udivmod16
+                0x0000daa4                __umodhi3
+ .text          0x0000daac        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .text.libgcc   0x0000daac       0x38 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+                0x0000daac                __udivsi3
+                0x0000daac                __ext_udivmod32
+                0x0000dada                __umodsi3
+ .text          0x0000dae4        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .text.malloc   0x0000dae4       0xbe /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+                0x0000dae4                malloc
+ .text.free     0x0000dba2        0x6 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+                0x0000dba2                free
+ .text          0x0000dba8        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .text.printf   0x0000dba8       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+                0x0000dba8                printf
+ .text.vprintf  0x0000dbb8        0xe /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+                0x0000dbb8                vprintf
+ .text          0x0000dbc6        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .text.print_field
+                0x0000dbc6      0x176 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .text.vuprintf
+                0x0000dd3c      0x740 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+                0x0000dd3c                vuprintf
+ .text          0x0000e47c        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .text.puts     0x0000e47c       0x2c /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+                0x0000e47c                puts
+ .text          0x0000e4a8        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .text.rand_r   0x0000e4a8       0x24 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+                0x0000e4a8                rand_r
+ .text.rand     0x0000e4cc       0x26 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+                0x0000e4cc                rand
+ .text.srand    0x0000e4f2        0xa /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+                0x0000e4f2                srand
+ .text          0x0000e4fc        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .text.strncmp  0x0000e4fc       0x2a /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+                0x0000e4fc                strncmp
+ .text          0x0000e526        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .text.memcmp   0x0000e526       0x2c /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+                0x0000e526                memcmp
+ .text          0x0000e552        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .text.memcpy   0x0000e552       0xe8 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+                0x0000e552                memcpy
+ .text          0x0000e63a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+ .text.memset   0x0000e63a       0x5c /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+                0x0000e63a                memset
+ .text          0x0000e696        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .text.libgcc   0x0000e696       0xbc /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+                0x0000e696                __xabi_udivmod64
+                0x0000e6e8                __udivdi3
+                0x0000e702                __umoddi3
+                0x0000e724                __udivmoddi4
+ .text          0x0000e752        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+ .text          0x0000e752        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .text          0x0000e752        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .text          0x0000e752        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+ .text          0x0000e752        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .text          0x0000e752        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .text          0x0000e752        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+ .text          0x0000e752        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .text          0x0000e752        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ .text.crt0     0x0000e752        0x2 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+                0x0000e752                _unexpected_
+ *(.near.text .near.text.*)
+ .near.text     0x0000e754       0x64 obj_z1/uart0.o
+                0x0000e754                __isr_23
+                0x0000e754                uart0_rx_interrupt
+ .near.text     0x0000e7b8        0x6 contiki-z1.a(watchdog.o)
+                0x0000e7b8                __isr_26
+                0x0000e7b8                watchdog_interrupt
+ .near.text     0x0000e7be       0x76 contiki-z1.a(button-sensor.o)
+                0x0000e7be                irq_p2
+                0x0000e7be                __isr_19
+ .near.text     0x0000e834       0xbe contiki-z1.a(adxl345.o)
+                0x0000e834                port1_isr
+                0x0000e834                __isr_18
+ .near.text     0x0000e8f2       0xea contiki-z1.a(clock.o)
+                0x0000e8f2                __isr_24
+                0x0000e8f2                timera1
+ .near.text     0x0000e9dc       0x5c contiki-z1.a(rtimer-arch.o)
+                0x0000e9dc                __isr_25
+                0x0000e9dc                timera0
+ .near.text     0x0000ea38       0x98 contiki-z1.a(i2cmaster.o)
+                0x0000ea38                __isr_16
+                0x0000ea38                i2c_tx_interrupt
+                0x0000eabc                i2c_rx_interrupt
+                0x0000eabc                __isr_17
+
+.rodata         0x0000ead0      0x45f
+                0x0000ead0                . = ALIGN (0x2)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0000ead0      0x1ae app.co
+                0x0000ec56                autostart_processes
+ .rodata        0x0000ec7e       0x2d obj_z1/ntp.o
+ .rodata        0x0000ecab       0x3e obj_z1/timestamp.o
+ .rodata        0x0000ece9       0xd4 obj_z1/contiki-z1-main.o
+ *fill*         0x0000edbd        0x1 00
+ .rodata        0x0000edbe        0x2 contiki-z1.a(rimeaddr.o)
+                0x0000edbe                rimeaddr_null
+ .rodata        0x0000edc0        0xc contiki-z1.a(rime.o)
+                0x0000edc6                rime_driver
+ .rodata        0x0000edcc        0x4 contiki-z1.a(broadcast-annou)
+ .rodata        0x0000edd0        0x8 contiki-z1.a(broadcast.o)
+ .rodata        0x0000edd8        0xa contiki-z1.a(unicast.o)
+ .rodata        0x0000ede2        0x2 contiki-z1.a(abc.o)
+ .rodata        0x0000ede4       0x10 contiki-z1.a(chameleon-bitop)
+                0x0000ede4                chameleon_bitopt
+ .rodata        0x0000edf4       0x16 contiki-z1.a(nullmac.o)
+                0x0000edfc                nullmac_driver
+ .rodata        0x0000ee0a       0x14 contiki-z1.a(plb.o)
+                0x0000ee0e                plb_driver
+ .rodata        0x0000ee1e        0xe contiki-z1.a(serial-line.o)
+ .rodata        0x0000ee2c        0xc contiki-z1.a(etimer.o)
+ .rodata        0x0000ee38        0xf contiki-z1.a(ctimer.o)
+ .rodata        0x0000ee47       0x2c contiki-z1.a(xmem.o)
+ *fill*         0x0000ee73        0x1 00
+ .rodata        0x0000ee74       0x22 contiki-z1.a(cc2420.o)
+                0x0000ee74                cc2420_driver
+ .rodata        0x0000ee96        0x8 contiki-z1.a(sensors.o)
+ .rodata        0x0000ee9e       0x10 contiki-z1.a(button-sensor.o)
+                0x0000eea6                button_sensor
+ .rodata        0x0000eeae       0x16 contiki-z1.a(adxl345.o)
+ .rodata        0x0000eec4        0x4 contiki-z1.a(framer-802154.o)
+                0x0000eec4                framer_802154
+ .rodata        0x0000eec8       0x26 contiki-z1.a(slip.o)
+ .rodata        0x0000eeee        0x2 contiki-z1.a(frame802154.o)
+ .rodata        0x0000eef0        0xd contiki-z1.a(tcpip.o)
+ *fill*         0x0000eefd        0x3 00
+ .rodata        0x0000ef00       0x28 contiki-z1.a(uip.o)
+                0x0000ef20                uip_all_zeroes_addr
+                0x0000ef24                uip_broadcast_addr
+ .rodata.vuprintf
+                0x0000ef28        0x7 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ *(.near.rodata .near.rodata.*)
+                0x0000ef30                . = ALIGN (0x2)
+                0x0000ef30                _etext = .
+
+.data           0x00001100       0x9a load address 0x0000ef30
+                0x00001100                . = ALIGN (0x2)
+                0x00001100                __data_start = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00001100        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .data          0x00001100        0xa app.co
+                0x00001100                app_layer_process
+ .data          0x0000110a        0x0 obj_z1/ntp.o
+ .data          0x0000110a        0x0 obj_z1/sclock.o
+ .data          0x0000110a        0x0 obj_z1/timestamp.o
+ .data          0x0000110a        0x0 obj_z1/uart0.o
+ .data          0x0000110a        0x0 obj_z1/uart.o
+ .data          0x0000110a        0x0 obj_z1/sensing.o
+ .data          0x0000110a        0x4 obj_z1/contiki-z1-main.o
+                0x0000110a                sensors
+ .data          0x0000110e        0x0 contiki-z1.a(rimeaddr.o)
+ .data          0x0000110e        0x0 contiki-z1.a(rime.o)
+ .data          0x0000110e        0x0 contiki-z1.a(announcement.o)
+ .data          0x0000110e        0x0 contiki-z1.a(broadcast-annou)
+ .data          0x0000110e        0x0 contiki-z1.a(broadcast.o)
+ .data          0x0000110e        0x0 contiki-z1.a(unicast.o)
+ .data          0x0000110e        0x0 contiki-z1.a(abc.o)
+ .data          0x0000110e        0x0 contiki-z1.a(chameleon.o)
+ .data          0x0000110e        0x0 contiki-z1.a(channel.o)
+ .data          0x0000110e        0x0 contiki-z1.a(chameleon-bitop)
+ .data          0x0000110e        0x0 contiki-z1.a(nullmac.o)
+ .data          0x0000110e        0x8 contiki-z1.a(plb.o)
+                0x0000110e                plb_config
+ .data          0x00001116        0x0 contiki-z1.a(process.o)
+ .data          0x00001116        0x0 contiki-z1.a(autostart.o)
+ .data          0x00001116        0xa contiki-z1.a(serial-line.o)
+                0x00001116                serial_line_process
+ .data          0x00001120        0x0 contiki-z1.a(list.o)
+ .data          0x00001120        0xa contiki-z1.a(etimer.o)
+                0x00001120                etimer_process
+ .data          0x0000112a        0xa contiki-z1.a(ctimer.o)
+                0x0000112a                ctimer_process
+ .data          0x00001134        0x0 contiki-z1.a(energest.o)
+ .data          0x00001134        0x0 contiki-z1.a(rtimer.o)
+ .data          0x00001134        0x0 contiki-z1.a(random.o)
+ .data          0x00001134        0x0 contiki-z1.a(ringbuf.o)
+ .data          0x00001134        0x0 contiki-z1.a(packetbuf.o)
+ .data          0x00001134       0x18 contiki-z1.a(queuebuf.o)
+ .data          0x0000114c        0x0 contiki-z1.a(contiki-z1-plat)
+ .data          0x0000114c        0x2 contiki-z1.a(msp430.o)
+ .data          0x0000114e        0x0 contiki-z1.a(leds.o)
+ .data          0x0000114e        0x0 contiki-z1.a(watchdog.o)
+ .data          0x0000114e        0x0 contiki-z1.a(xmem.o)
+ .data          0x0000114e        0x0 contiki-z1.a(spi.o)
+ .data          0x0000114e        0xa contiki-z1.a(cc2420.o)
+                0x0000114e                cc2420_process
+ .data          0x00001158        0x0 contiki-z1.a(cc2420-arch.o)
+ .data          0x00001158        0x0 contiki-z1.a(node-id.o)
+ .data          0x00001158        0xa contiki-z1.a(sensors.o)
+                0x00001158                sensors_process
+ .data          0x00001162        0x0 contiki-z1.a(button-sensor.o)
+ .data          0x00001162        0x0 contiki-z1.a(uart0-putchar.o)
+ .data          0x00001162        0x0 contiki-z1.a(slip_uart0.o)
+ .data          0x00001162       0x20 contiki-z1.a(adxl345.o)
+                0x00001162                accmeter_process
+ .data          0x00001182        0x0 contiki-z1.a(clock.o)
+ .data          0x00001182        0x0 contiki-z1.a(leds-arch.o)
+ .data          0x00001182        0x0 contiki-z1.a(rtimer-arch.o)
+ .data          0x00001182        0x0 contiki-z1.a(mac.o)
+ .data          0x00001182        0x0 contiki-z1.a(framer-802154.o)
+ .data          0x00001182        0x0 contiki-z1.a(memb.o)
+ .data          0x00001182        0x0 contiki-z1.a(timer.o)
+ .data          0x00001182        0xa contiki-z1.a(slip.o)
+                0x00001182                slip_process
+ .data          0x0000118c        0x0 contiki-z1.a(i2cmaster.o)
+ .data          0x0000118c        0x0 contiki-z1.a(frame802154.o)
+ .data          0x0000118c        0xa contiki-z1.a(tcpip.o)
+                0x0000118c                tcpip_process
+ .data          0x00001196        0x0 contiki-z1.a(uip-fw.o)
+ .data          0x00001196        0x0 contiki-z1.a(uip.o)
+ .data          0x00001196        0x0 contiki-z1.a(uip-ipchksum.o)
+ .data          0x00001196        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_mulsi3.o)
+ .data          0x00001196        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .data          0x00001196        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .data          0x00001196        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .data          0x00001196        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .data          0x00001196        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .data          0x00001196        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .data          0x00001196        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .data.next     0x00001196        0x4 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .data          0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ *(.near.data .near.data.*)
+                0x0000119a                . = ALIGN (0x2)
+                0x0000119a                _edata = .
+                0x0000ef30                __data_load_start = LOADADDR (.data)
+                0x0000009a                __data_size = SIZEOF (.data)
+
+.bss            0x0000119a     0x1aaa load address 0x0000efca
+                0x0000119a                __bss_start = .
+ *(.bss .bss.*)
+ .bss           0x0000119a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .bss           0x0000119a       0xb0 app.co
+ .bss           0x0000124a       0x22 obj_z1/ntp.o
+ .bss           0x0000126c       0x1c obj_z1/sclock.o
+ .bss           0x00001288        0x0 obj_z1/timestamp.o
+ .bss           0x00001288        0x4 obj_z1/uart0.o
+ .bss           0x0000128c        0x0 obj_z1/uart.o
+ .bss           0x0000128c        0x0 obj_z1/sensing.o
+ .bss           0x0000128c        0x4 obj_z1/contiki-z1-main.o
+ .bss           0x00001290        0x0 contiki-z1.a(rimeaddr.o)
+ .bss           0x00001290        0x2 contiki-z1.a(rime.o)
+ .bss           0x00001292        0x6 contiki-z1.a(announcement.o)
+ .bss           0x00001298       0x48 contiki-z1.a(broadcast-annou)
+ .bss           0x000012e0        0x0 contiki-z1.a(broadcast.o)
+ .bss           0x000012e0        0x0 contiki-z1.a(unicast.o)
+ .bss           0x000012e0        0x0 contiki-z1.a(abc.o)
+ .bss           0x000012e0        0x0 contiki-z1.a(chameleon.o)
+ .bss           0x000012e0        0x2 contiki-z1.a(channel.o)
+ .bss           0x000012e2        0x0 contiki-z1.a(chameleon-bitop)
+ .bss           0x000012e2        0x0 contiki-z1.a(nullmac.o)
+ .bss           0x000012e2       0x3a contiki-z1.a(plb.o)
+ .bss           0x0000131c       0x42 contiki-z1.a(process.o)
+                0x0000131c                process_current
+                0x0000131e                process_list
+ .bss           0x0000135e        0x0 contiki-z1.a(autostart.o)
+ .bss           0x0000135e      0x10a contiki-z1.a(serial-line.o)
+ .bss           0x00001468        0x0 contiki-z1.a(list.o)
+ .bss           0x00001468        0x6 contiki-z1.a(etimer.o)
+ .bss           0x0000146e        0x4 contiki-z1.a(ctimer.o)
+ .bss           0x00001472        0x0 contiki-z1.a(energest.o)
+ .bss           0x00001472        0x2 contiki-z1.a(rtimer.o)
+ .bss           0x00001474        0x0 contiki-z1.a(random.o)
+ .bss           0x00001474        0x0 contiki-z1.a(ringbuf.o)
+ .bss           0x00001474       0xba contiki-z1.a(packetbuf.o)
+ .bss           0x0000152e      0x68e contiki-z1.a(queuebuf.o)
+ .bss           0x00001bbc        0x0 contiki-z1.a(contiki-z1-plat)
+ .bss           0x00001bbc        0x0 contiki-z1.a(msp430.o)
+ .bss           0x00001bbc        0x2 contiki-z1.a(leds.o)
+ .bss           0x00001bbe        0x2 contiki-z1.a(watchdog.o)
+ .bss           0x00001bc0        0x0 contiki-z1.a(xmem.o)
+ .bss           0x00001bc0        0x1 contiki-z1.a(spi.o)
+                0x00001bc0                spi_busy
+ *fill*         0x00001bc1        0x1 00
+ .bss           0x00001bc2        0xa contiki-z1.a(cc2420.o)
+ .bss           0x00001bcc        0x0 contiki-z1.a(cc2420-arch.o)
+ .bss           0x00001bcc        0x2 contiki-z1.a(node-id.o)
+                0x00001bcc                node_id
+ .bss           0x00001bce        0x6 contiki-z1.a(sensors.o)
+ .bss           0x00001bd4        0x8 contiki-z1.a(button-sensor.o)
+ .bss           0x00001bdc        0x0 contiki-z1.a(uart0-putchar.o)
+ .bss           0x00001bdc        0x0 contiki-z1.a(slip_uart0.o)
+ .bss           0x00001bdc       0x16 contiki-z1.a(adxl345.o)
+ .bss           0x00001bf2        0xa contiki-z1.a(clock.o)
+ .bss           0x00001bfc        0x0 contiki-z1.a(leds-arch.o)
+ .bss           0x00001bfc        0x0 contiki-z1.a(rtimer-arch.o)
+ .bss           0x00001bfc        0x0 contiki-z1.a(mac.o)
+ .bss           0x00001bfc        0x2 contiki-z1.a(framer-802154.o)
+ .bss           0x00001bfe        0x0 contiki-z1.a(memb.o)
+ .bss           0x00001bfe        0x0 contiki-z1.a(timer.o)
+ .bss           0x00001bfe       0x88 contiki-z1.a(slip.o)
+ .bss           0x00001c86        0x2 contiki-z1.a(i2cmaster.o)
+ .bss           0x00001c88        0x0 contiki-z1.a(frame802154.o)
+ .bss           0x00001c88       0x36 contiki-z1.a(tcpip.o)
+ .bss           0x00001cbe      0x1a8 contiki-z1.a(uip-fw.o)
+ .bss           0x00001e66       0x14 contiki-z1.a(uip.o)
+                0x00001e66                uip_lladdr
+ .bss           0x00001e7a        0x0 contiki-z1.a(uip-ipchksum.o)
+ .bss           0x00001e7a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_mulsi3.o)
+ .bss           0x00001e7a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .bss           0x00001e7a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .bss           0x00001e7a        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .bss.once.1522
+                0x00001e7a        0x1 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .bss           0x00001e7b        0x0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ *(.near.bss .near.bss.*)
+ *(COMMON)
+ *fill*         0x00001e7b        0x1 00
+ COMMON         0x00001e7c      0xb38 app.co
+                0x00001e7c                CWT_hp_b
+                0x00001e98                CWT_second_sig_base_addr
+                0x00001e9c                CWT_up_square_acc
+                0x00001ea0                CWT_coef_dw_mat
+                0x0000227e                sel_num
+                0x00002280                CWT_lfreq
+                0x00002284                CWT_hfreq
+                0x00002288                CWT_first_sig_base_addr
+                0x0000228c                CWT_in_data
+                0x00002300                CWT_hp_a
+                0x0000231c                CWT_data_y_prev
+                0x00002338                CWT_UART_addr_H3bit
+                0x0000233a                CWT_up_square_mean
+                0x0000233e                CWT_out_up
+                0x00002342                CWT_data_x_prev
+                0x0000235e                CWT_up_variance
+                0x000023e2                CWT_k
+                0x000023e6                CWT_UART_rdata_L8bit
+                0x000023e8                CWT_out_dw_01
+                0x000023ec                r_char
+                0x000023ed                CWT_UART_cmd_Hf_tx
+                0x000023ee                CWT_delay_k
+                0x000023f2                CWT_UART_tx_freq
+                0x000023f4                CWT_up_acc
+                0x000023f8                UART_wait_time_index
+                0x000023fc                CWT_up_mean_square
+                0x00002400                CWT_hpf_out
+                0x00002404                i
+                0x00002406                va
+                0x00002408                CWT_up_mean
+                0x0000240c                CWT_j
+                0x00002410                CWT_LRS
+                0x00002414                CWT_hpf_out_01
+                0x00002418                CWT_base_addr
+                0x0000241c                CWT_dw_square_acc
+                0x00002420                CWT_X2
+                0x00002424                CWT_UART_addr_L8bit
+                0x00002426                CWT_delay_cnt
+                0x0000242a                CWT_UART_cmd_datawr
+                0x0000242c                CWT_dw_acc
+                0x00002430                CWT_UART_addr
+                0x00002434                CWT_dw_mean
+                0x00002438                CWT_UART_cmd_HfLf_tx
+                0x00002439                CWT_UART_wdata_H8bit
+                0x0000243a                Tx_wait_time_index
+                0x0000243e                CWT_out_dw
+                0x00002442                CWT_i
+                0x00002446                CWT_coef_up_sel
+                0x000024be                CWT_coef_dw_sel
+                0x00002536                CWT_coef_up_mat
+                0x00002914                CWT_UART_wdata_L8bit
+                0x00002916                CWT_dw_square_mean
+                0x0000291a                CWT_read_data
+                0x0000291e                w_char
+                0x0000291f                CWT_UART_cmd_datard
+                0x00002920                CWT_dw_mean_square
+                0x00002924                CWT_out_up_01
+                0x00002928                CWT_dw_variance
+                0x000029ac                CWT_UART_rdata_H8bit
+                0x000029ad                CWT_UART_addr_wcmd
+                0x000029ae                CWT_UART_addr_M8bit
+                0x000029b0                CWT_X1
+ COMMON         0x000029b4        0x2 obj_z1/contiki-z1-main.o
+                0x000029b4                sensors_flags
+ COMMON         0x000029b6        0x2 contiki-z1.a(rimeaddr.o)
+                0x000029b6                rimeaddr_node_addr
+ COMMON         0x000029b8        0x1 contiki-z1.a(process.o)
+                0x000029b8                process_maxevents
+ COMMON         0x000029b9        0x1 contiki-z1.a(serial-line.o)
+                0x000029b9                serial_line_event_message
+ COMMON         0x000029ba       0x56 contiki-z1.a(energest.o)
+                0x000029ba                energest_total_time
+                0x000029ea                energest_total_count
+                0x000029ec                energest_current_mode
+                0x000029f8                energest_current_time
+ COMMON         0x00002a10       0x3e contiki-z1.a(packetbuf.o)
+                0x00002a10                packetbuf_addrs
+                0x00002a18                packetbuf_attrs
+ COMMON         0x00002a4e       0x14 contiki-z1.a(cc2420.o)
+                0x00002a4e                cc2420_last_rssi
+                0x00002a50                cc2420_packets_read
+                0x00002a52                cc2420_packets_seen
+                0x00002a54                cc2420_sfd_start_time
+                0x00002a56                cc2420_time_of_departure
+                0x00002a58                cc2420_time_of_arrival
+                0x00002a5a                cc2420_last_correlation
+                0x00002a5c                cc2420_authority_level_of_sender
+                0x00002a5e                cc2420_sfd_counter
+                0x00002a60                cc2420_sfd_end_time
+ COMMON         0x00002a62        0x8 contiki-z1.a(node-id.o)
+                0x00002a62                node_mac
+ COMMON         0x00002a6a        0x1 contiki-z1.a(sensors.o)
+                0x00002a6a                sensors_event
+ *fill*         0x00002a6b        0x1 00
+ COMMON         0x00002a6c        0x7 contiki-z1.a(adxl345.o)
+                0x00002a6c                accm_int2_cb
+                0x00002a6e                int2_event
+                0x00002a70                accm_int1_cb
+                0x00002a72                int1_event
+ COMMON         0x00002a73        0x1 contiki-z1.a(slip.o)
+                0x00002a73                slip_active
+ COMMON         0x00002a74        0xc contiki-z1.a(i2cmaster.o)
+                0x00002a74                transmit_data1
+                0x00002a75                rx_byte_ctr
+                0x00002a76                tx_buf_ptr
+                0x00002a78                tx_byte_ctr
+                0x00002a79                receive_data
+                0x00002a7a                rx_buf
+                0x00002a7c                transmit_data2
+                0x00002a7e                rx_buf_ptr
+ COMMON         0x00002a80        0x2 contiki-z1.a(tcpip.o)
+                0x00002a80                tcpip_is_forwarding
+                0x00002a81                tcpip_event
+ COMMON         0x00002a82      0x1c2 contiki-z1.a(uip.o)
+                0x00002a82                uip_len
+                0x00002a84                uip_sappdata
+                0x00002a86                uip_acc32
+                0x00002a8a                uip_aligned_buf
+                0x00002af6                uip_flags
+                0x00002af8                uip_udp_conn
+                0x00002afa                uip_appdata
+                0x00002afc                uip_conn
+                0x00002afe                uip_conns
+                0x00002b7e                uip_listenports
+                0x00002b8e                uip_draddr
+                0x00002b92                uip_netmask
+                0x00002b96                uip_hostaddr
+                0x00002b9a                uip_slen
+                0x00002b9c                uip_udp_conns
+                0x00002c44                . = ALIGN (0x2)
+                0x00002c44                __bss_end = .
+                0x00001aaa                __bss_size = SIZEOF (.bss)
+
+.noinit         0x00002c44        0x2 load address 0x0000efca
+                0x00002c44                . = ALIGN (0x2)
+                0x00002c44                __noinit_start = .
+ *(.noinit .noinit.*)
+ .noinit.crt0   0x00002c44        0x2 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+                0x00002c44                __wdt_clear_value
+                0x00002c46                . = ALIGN (0x2)
+                0x00002c46                __noinit_end = .
+                0x00002c46                . = ALIGN (0x2)
+                0x00002c46                _end = .
+
+.infomem        0x00001000        0x0
+                0x00001000                . = ALIGN (0x2)
+ *(.infomem .infomem.*)
+
+.infomemnobits  0x00001000        0x0
+                0x00001000                . = ALIGN (0x2)
+ *(.infomemnobits .infomemnobits.*)
+
+.infoa          0x000010c0        0x0
+                0x000010c0                . = ALIGN (0x2)
+ *(.infoa .infoa.*)
+
+.infob          0x00001080        0x0
+                0x00001080                . = ALIGN (0x2)
+ *(.infob .infob.*)
+
+.infoc          0x00001040        0x0
+                0x00001040                . = ALIGN (0x2)
+ *(.infoc .infoc.*)
+
+.infod          0x00001000        0x0
+                0x00001000                . = ALIGN (0x2)
+ *(.infod .infod.*)
+
+.vectors        0x0000ffc0       0x40
+                0x0000ffc0                __vectors_start = .
+ *(.vectors*)
+ .vectors       0x0000ffc0       0x40 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+                0x0000ffc0                __ivtbl_32
+                0x00010000                _vectors_end = .
+
+.fartext        0x00010000        0x0
+                0x00010000                . = ALIGN (0x2)
+ *(.fartext .fartext.*)
+
+.far.text       0x00010000        0x0
+                0x00010000                . = ALIGN (0x2)
+ *(.far.text .far.text.*)
+
+.far.rodata     0x00010000        0x0
+                0x00010000                . = ALIGN (0x2)
+ *(.far.rodata .far.rodata.*)
+                0x00010000                . = ALIGN (0x2)
+                0x00010000                _efartext = .
+
+.far.data       0x00000000        0x0 load address 0x00010000
+                0x00000000                . = ALIGN (0x2)
+                0x00000000                __far_data_start = .
+ *(.far.data .far.data.*)
+                0x00000000                . = ALIGN (0x2)
+                0x00000000                _efardata = .
+                0x00010000                __far_data_load_start = LOADADDR (.far.data)
+                0x00000000                __far_data_size = SIZEOF (.far.data)
+
+.far.bss        0x00000000        0x0 load address 0x00010000
+                0x00000000                . = ALIGN (0x2)
+                0x00000000                __far_bss_start = .
+ *(.far.bss .far.bss.*)
+                0x00000000                . = ALIGN (0x2)
+                0x00000000                __far_bss_end = .
+                0x00000000                __far_bss_size = SIZEOF (.far.bss)
+                0x00000000                . = ALIGN (0x2)
+                0x00000000                _far_end = .
+
+.profiler
+ *(.profiler)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x30
+ *(.comment)
+ .comment       0x00000000       0x30 app.co
+                                 0x31 (size before relaxing)
+ .comment       0x00000000       0x31 obj_z1/ntp.o
+ .comment       0x00000000       0x31 obj_z1/sclock.o
+ .comment       0x00000000       0x31 obj_z1/timestamp.o
+ .comment       0x00000000       0x31 obj_z1/uart0.o
+ .comment       0x00000000       0x31 obj_z1/uart.o
+ .comment       0x00000000       0x31 obj_z1/sensing.o
+ .comment       0x00000000       0x31 obj_z1/contiki-z1-main.o
+ .comment       0x00000000       0x31 contiki-z1.a(rimeaddr.o)
+ .comment       0x00000000       0x31 contiki-z1.a(rime.o)
+ .comment       0x00000000       0x31 contiki-z1.a(announcement.o)
+ .comment       0x00000000       0x31 contiki-z1.a(broadcast-annou)
+ .comment       0x00000000       0x31 contiki-z1.a(broadcast.o)
+ .comment       0x00000000       0x31 contiki-z1.a(unicast.o)
+ .comment       0x00000000       0x31 contiki-z1.a(abc.o)
+ .comment       0x00000000       0x31 contiki-z1.a(chameleon.o)
+ .comment       0x00000000       0x31 contiki-z1.a(channel.o)
+ .comment       0x00000000       0x31 contiki-z1.a(chameleon-bitop)
+ .comment       0x00000000       0x31 contiki-z1.a(nullmac.o)
+ .comment       0x00000000       0x31 contiki-z1.a(plb.o)
+ .comment       0x00000000       0x31 contiki-z1.a(process.o)
+ .comment       0x00000000       0x31 contiki-z1.a(autostart.o)
+ .comment       0x00000000       0x31 contiki-z1.a(serial-line.o)
+ .comment       0x00000000       0x31 contiki-z1.a(list.o)
+ .comment       0x00000000       0x31 contiki-z1.a(etimer.o)
+ .comment       0x00000000       0x31 contiki-z1.a(ctimer.o)
+ .comment       0x00000000       0x31 contiki-z1.a(energest.o)
+ .comment       0x00000000       0x31 contiki-z1.a(rtimer.o)
+ .comment       0x00000000       0x31 contiki-z1.a(random.o)
+ .comment       0x00000000       0x31 contiki-z1.a(ringbuf.o)
+ .comment       0x00000000       0x31 contiki-z1.a(packetbuf.o)
+ .comment       0x00000000       0x31 contiki-z1.a(queuebuf.o)
+ .comment       0x00000000       0x31 contiki-z1.a(contiki-z1-plat)
+ .comment       0x00000000       0x31 contiki-z1.a(msp430.o)
+ .comment       0x00000000       0x31 contiki-z1.a(leds.o)
+ .comment       0x00000000       0x31 contiki-z1.a(watchdog.o)
+ .comment       0x00000000       0x31 contiki-z1.a(xmem.o)
+ .comment       0x00000000       0x31 contiki-z1.a(spi.o)
+ .comment       0x00000000       0x31 contiki-z1.a(cc2420.o)
+ .comment       0x00000000       0x31 contiki-z1.a(cc2420-arch.o)
+ .comment       0x00000000       0x31 contiki-z1.a(node-id.o)
+ .comment       0x00000000       0x31 contiki-z1.a(sensors.o)
+ .comment       0x00000000       0x31 contiki-z1.a(button-sensor.o)
+ .comment       0x00000000       0x31 contiki-z1.a(uart0-putchar.o)
+ .comment       0x00000000       0x31 contiki-z1.a(slip_uart0.o)
+ .comment       0x00000000       0x31 contiki-z1.a(adxl345.o)
+ .comment       0x00000000       0x31 contiki-z1.a(clock.o)
+ .comment       0x00000000       0x31 contiki-z1.a(leds-arch.o)
+ .comment       0x00000000       0x31 contiki-z1.a(rtimer-arch.o)
+ .comment       0x00000000       0x31 contiki-z1.a(mac.o)
+ .comment       0x00000000       0x31 contiki-z1.a(framer-802154.o)
+ .comment       0x00000000       0x31 contiki-z1.a(memb.o)
+ .comment       0x00000000       0x31 contiki-z1.a(timer.o)
+ .comment       0x00000000       0x31 contiki-z1.a(slip.o)
+ .comment       0x00000000       0x31 contiki-z1.a(i2cmaster.o)
+ .comment       0x00000000       0x31 contiki-z1.a(frame802154.o)
+ .comment       0x00000000       0x31 contiki-z1.a(tcpip.o)
+ .comment       0x00000000       0x31 contiki-z1.a(uip-fw.o)
+ .comment       0x00000000       0x31 contiki-z1.a(uip.o)
+ .comment       0x00000000       0x31 contiki-z1.a(uip-ipchksum.o)
+ .comment       0x00000000       0x31 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .comment       0x00000000       0x31 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .comment       0x00000000       0x31 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .comment       0x00000000       0x31 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .comment       0x00000000       0x31 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .comment       0x00000000       0x31 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .comment       0x00000000       0x31 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .comment       0x00000000       0x31 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .comment       0x00000000       0x31 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x2a8
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .debug_aranges
+                0x00000020       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_mulsi3.o)
+ .debug_aranges
+                0x00000040       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .debug_aranges
+                0x00000060       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .debug_aranges
+                0x00000080       0x28 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .debug_aranges
+                0x000000a8       0x28 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_aranges
+                0x000000d0       0x28 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_aranges
+                0x000000f8       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_aranges
+                0x00000118       0x30 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .debug_aranges
+                0x00000148       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .debug_aranges
+                0x00000168       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .debug_aranges
+                0x00000188       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .debug_aranges
+                0x000001a8       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+ .debug_aranges
+                0x000001c8       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .debug_aranges
+                0x000001e8       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_aranges
+                0x00000208       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_aranges
+                0x00000228       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_aranges
+                0x00000248       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_aranges
+                0x00000268       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_aranges
+                0x00000288       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x1754
+ *(.debug_info)
+ .debug_info    0x00000000       0xac /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .debug_info    0x000000ac       0xa9 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_mulsi3.o)
+ .debug_info    0x00000155       0xa9 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .debug_info    0x000001fe       0xa9 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .debug_info    0x000002a7      0x185 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .debug_info    0x0000042c      0x18d /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_info    0x000005b9      0x66d /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_info    0x00000c26       0xe1 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_info    0x00000d07      0x172 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .debug_info    0x00000e79       0xd8 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .debug_info    0x00000f51       0xff /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .debug_info    0x00001050      0x144 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .debug_info    0x00001194      0x12d /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+ .debug_info    0x000012c1       0xa9 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .debug_info    0x0000136a       0xa7 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_info    0x00001411       0xa7 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_info    0x000014b8       0xa7 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_info    0x0000155f       0xa7 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_info    0x00001606       0xa7 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_info    0x000016ad       0xa7 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x91a
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .debug_abbrev  0x00000014       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_mulsi3.o)
+ .debug_abbrev  0x00000028       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .debug_abbrev  0x0000003c       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .debug_abbrev  0x00000050      0x10c /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .debug_abbrev  0x0000015c       0xfa /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_abbrev  0x00000256      0x23e /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_abbrev  0x00000494       0xa3 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_abbrev  0x00000537       0xfb /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .debug_abbrev  0x00000632       0x72 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .debug_abbrev  0x000006a4       0x9e /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .debug_abbrev  0x00000742       0xab /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .debug_abbrev  0x000007ed       0xa1 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+ .debug_abbrev  0x0000088e       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .debug_abbrev  0x000008a2       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_abbrev  0x000008b6       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_abbrev  0x000008ca       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_abbrev  0x000008de       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_abbrev  0x000008f2       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_abbrev  0x00000906       0x14 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+
+.debug_line     0x00000000      0xdf5
+ *(.debug_line)
+ .debug_line    0x00000000       0x69 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .debug_line    0x00000069       0x79 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_mulsi3.o)
+ .debug_line    0x000000e2       0x75 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .debug_line    0x00000157       0x80 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .debug_line    0x000001d7       0xf2 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .debug_line    0x000002c9       0xad /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_line    0x00000376      0x35d /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_line    0x000006d3       0x67 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_line    0x0000073a       0x6e /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .debug_line    0x000007a8       0x91 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .debug_line    0x00000839       0x91 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .debug_line    0x000008ca      0x11a /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .debug_line    0x000009e4       0xf4 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+ .debug_line    0x00000ad8       0xb0 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .debug_line    0x00000b88       0x67 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_line    0x00000bef       0x65 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_line    0x00000c54       0x6b /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_line    0x00000cbf       0x6b /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_line    0x00000d2a       0x66 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_line    0x00000d90       0x65 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+
+.debug_frame    0x00000000      0x228
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x40 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .debug_frame   0x00000040       0x34 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_frame   0x00000074       0x84 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_frame   0x000000f8       0x2c /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_frame   0x00000124       0x4c /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .debug_frame   0x00000170       0x2c /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .debug_frame   0x0000019c       0x2c /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .debug_frame   0x000001c8       0x30 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .debug_frame   0x000001f8       0x30 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+
+.debug_str      0x00000000      0x465
+ *(.debug_str)
+ .debug_str     0x00000000      0x112 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+                                0x161 (size before relaxing)
+ .debug_str     0x00000112       0x49 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+                                0x147 (size before relaxing)
+ .debug_str     0x0000015b      0x22b /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+                                0x3ad (size before relaxing)
+ .debug_str     0x00000386       0x1d /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+                                0x10c (size before relaxing)
+ .debug_str     0x000003a3       0x2a /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+                                0x123 (size before relaxing)
+ .debug_str     0x000003cd       0x1b /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+                                0x111 (size before relaxing)
+ .debug_str     0x000003e8       0x19 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+                                0x10f (size before relaxing)
+ .debug_str     0x00000401       0x3e /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+                                0x13d (size before relaxing)
+ .debug_str     0x0000043f       0x26 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+                                0x13b (size before relaxing)
+
+.debug_loc      0x00000000     0x13af
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x166 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .debug_loc     0x00000166       0x78 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_loc     0x000001de      0xc38 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_loc     0x00000e16       0x3e /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_loc     0x00000e54       0x78 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .debug_loc     0x00000ecc       0x7a /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .debug_loc     0x00000f46       0x6d /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .debug_loc     0x00000fb3      0x2c3 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .debug_loc     0x00001276      0x139 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000      0x100
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x30 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .debug_ranges  0x00000030       0x18 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_ranges  0x00000048       0x48 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_ranges  0x00000090       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_ranges  0x000000a0       0x20 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .debug_ranges  0x000000c0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .debug_ranges  0x000000d0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .debug_ranges  0x000000e0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .debug_ranges  0x000000f0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+                0x00003100                PROVIDE (__stack, (ORIGIN (ram) + 0x2000))
+                0x0000ef30                __data_start_rom = _etext
+                0x0000efca                __data_end_rom = (_etext + SIZEOF (.data))
+OUTPUT(app.z1 elf32-msp430)
+
+.gnu.attributes
+                0x00000000       0x10
+ .gnu.attributes
+                0x00000000       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .gnu.attributes
+                0x00000010       0x10 app.co
+ .gnu.attributes
+                0x00000020       0x10 obj_z1/ntp.o
+ .gnu.attributes
+                0x00000030       0x10 obj_z1/sclock.o
+ .gnu.attributes
+                0x00000040       0x10 obj_z1/timestamp.o
+ .gnu.attributes
+                0x00000050       0x10 obj_z1/uart0.o
+ .gnu.attributes
+                0x00000060       0x10 obj_z1/uart.o
+ .gnu.attributes
+                0x00000070       0x10 obj_z1/sensing.o
+ .gnu.attributes
+                0x00000080       0x10 obj_z1/contiki-z1-main.o
+ .gnu.attributes
+                0x00000090       0x10 contiki-z1.a(rimeaddr.o)
+ .gnu.attributes
+                0x000000a0       0x10 contiki-z1.a(rime.o)
+ .gnu.attributes
+                0x000000b0       0x10 contiki-z1.a(announcement.o)
+ .gnu.attributes
+                0x000000c0       0x10 contiki-z1.a(broadcast-annou)
+ .gnu.attributes
+                0x000000d0       0x10 contiki-z1.a(broadcast.o)
+ .gnu.attributes
+                0x000000e0       0x10 contiki-z1.a(unicast.o)
+ .gnu.attributes
+                0x000000f0       0x10 contiki-z1.a(abc.o)
+ .gnu.attributes
+                0x00000100       0x10 contiki-z1.a(chameleon.o)
+ .gnu.attributes
+                0x00000110       0x10 contiki-z1.a(channel.o)
+ .gnu.attributes
+                0x00000120       0x10 contiki-z1.a(chameleon-bitop)
+ .gnu.attributes
+                0x00000130       0x10 contiki-z1.a(nullmac.o)
+ .gnu.attributes
+                0x00000140       0x10 contiki-z1.a(plb.o)
+ .gnu.attributes
+                0x00000150       0x10 contiki-z1.a(process.o)
+ .gnu.attributes
+                0x00000160       0x10 contiki-z1.a(autostart.o)
+ .gnu.attributes
+                0x00000170       0x10 contiki-z1.a(serial-line.o)
+ .gnu.attributes
+                0x00000180       0x10 contiki-z1.a(list.o)
+ .gnu.attributes
+                0x00000190       0x10 contiki-z1.a(etimer.o)
+ .gnu.attributes
+                0x000001a0       0x10 contiki-z1.a(ctimer.o)
+ .gnu.attributes
+                0x000001b0       0x10 contiki-z1.a(energest.o)
+ .gnu.attributes
+                0x000001c0       0x10 contiki-z1.a(rtimer.o)
+ .gnu.attributes
+                0x000001d0       0x10 contiki-z1.a(random.o)
+ .gnu.attributes
+                0x000001e0       0x10 contiki-z1.a(ringbuf.o)
+ .gnu.attributes
+                0x000001f0       0x10 contiki-z1.a(packetbuf.o)
+ .gnu.attributes
+                0x00000200       0x10 contiki-z1.a(queuebuf.o)
+ .gnu.attributes
+                0x00000210       0x10 contiki-z1.a(contiki-z1-plat)
+ .gnu.attributes
+                0x00000220       0x10 contiki-z1.a(msp430.o)
+ .gnu.attributes
+                0x00000230       0x10 contiki-z1.a(leds.o)
+ .gnu.attributes
+                0x00000240       0x10 contiki-z1.a(watchdog.o)
+ .gnu.attributes
+                0x00000250       0x10 contiki-z1.a(xmem.o)
+ .gnu.attributes
+                0x00000260       0x10 contiki-z1.a(spi.o)
+ .gnu.attributes
+                0x00000270       0x10 contiki-z1.a(cc2420.o)
+ .gnu.attributes
+                0x00000280       0x10 contiki-z1.a(cc2420-arch.o)
+ .gnu.attributes
+                0x00000290       0x10 contiki-z1.a(node-id.o)
+ .gnu.attributes
+                0x000002a0       0x10 contiki-z1.a(sensors.o)
+ .gnu.attributes
+                0x000002b0       0x10 contiki-z1.a(button-sensor.o)
+ .gnu.attributes
+                0x000002c0       0x10 contiki-z1.a(uart0-putchar.o)
+ .gnu.attributes
+                0x000002d0       0x10 contiki-z1.a(slip_uart0.o)
+ .gnu.attributes
+                0x000002e0       0x10 contiki-z1.a(adxl345.o)
+ .gnu.attributes
+                0x000002f0       0x10 contiki-z1.a(clock.o)
+ .gnu.attributes
+                0x00000300       0x10 contiki-z1.a(leds-arch.o)
+ .gnu.attributes
+                0x00000310       0x10 contiki-z1.a(rtimer-arch.o)
+ .gnu.attributes
+                0x00000320       0x10 contiki-z1.a(mac.o)
+ .gnu.attributes
+                0x00000330       0x10 contiki-z1.a(framer-802154.o)
+ .gnu.attributes
+                0x00000340       0x10 contiki-z1.a(memb.o)
+ .gnu.attributes
+                0x00000350       0x10 contiki-z1.a(timer.o)
+ .gnu.attributes
+                0x00000360       0x10 contiki-z1.a(slip.o)
+ .gnu.attributes
+                0x00000370       0x10 contiki-z1.a(i2cmaster.o)
+ .gnu.attributes
+                0x00000380       0x10 contiki-z1.a(frame802154.o)
+ .gnu.attributes
+                0x00000390       0x10 contiki-z1.a(tcpip.o)
+ .gnu.attributes
+                0x000003a0       0x10 contiki-z1.a(uip-fw.o)
+ .gnu.attributes
+                0x000003b0       0x10 contiki-z1.a(uip.o)
+ .gnu.attributes
+                0x000003c0       0x10 contiki-z1.a(uip-ipchksum.o)
+ .gnu.attributes
+                0x000003d0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_mulsi3.o)
+ .gnu.attributes
+                0x000003e0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .gnu.attributes
+                0x000003f0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .gnu.attributes
+                0x00000400       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(malloc.o)
+ .gnu.attributes
+                0x00000410       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .gnu.attributes
+                0x00000420       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .gnu.attributes
+                0x00000430       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .gnu.attributes
+                0x00000440       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(rand.o)
+ .gnu.attributes
+                0x00000450       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(strncmp.o)
+ .gnu.attributes
+                0x00000460       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcmp.o)
+ .gnu.attributes
+                0x00000470       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memcpy.o)
+ .gnu.attributes
+                0x00000480       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(memset.o)
+ .gnu.attributes
+                0x00000490       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .gnu.attributes
+                0x000004a0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+ .gnu.attributes
+                0x000004b0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .gnu.attributes
+                0x000004c0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .gnu.attributes
+                0x000004d0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+ .gnu.attributes
+                0x000004e0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .gnu.attributes
+                0x000004f0       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .gnu.attributes
+                0x00000500       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+ .gnu.attributes
+                0x00000510       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .gnu.attributes
+                0x00000520       0x10 /usr/local/msp430/bin/../lib/gcc/msp430/4.7.0/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)

@@ -1,0 +1,8 @@
+CONTIKI = ../..
+
+CONTIKIDIRS += $(CONTIKI)/libsync $(CONTIKI)/libuart $(CONTIKI)/cpu/msp430/f2xxx
+PROJECT_SOURCEFILES += ntp.c sclock.c timestamp.c uart.c 
+
+all: app
+
+include $(CONTIKI)/Makefile.include

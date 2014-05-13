@@ -983,7 +983,6 @@ static void plb_input(void) {
 			PRINTF(
 					"plb_input [src: %d.%d] [type: %x]\n", packetbuf_addr(PACKETBUF_ADDR_SENDER)->u8[0], packetbuf_addr(PACKETBUF_ADDR_SENDER)->u8[1], type);
 
-			switch (type) {
 			case BEACON_SD:
 				//		if( a_wait == 0 ){
 				plb_send_ack(BEACON_SD_ACK);

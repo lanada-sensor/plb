@@ -47,6 +47,7 @@
 //for clock-scheme
 #include "ntp.h"
 #include "sclock.h"
+#include "random.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -63,7 +64,7 @@ PROCESS(app_layer_process, "Sensor network App layer start");
 AUTOSTART_PROCESSES(&app_layer_process);
 /*---------------------------------------------------------------------------*/
 //static variables
-typedef enum {DATA_flag=1, SYNC_flag, END_flag} input_flag;
+typedef enum {DATA_flag=1, SYNC_flag, END_flag, DATA_SENT_flag} input_flag;
 
 static uint8_t result_data;
 static uint8_t is_data_or_sync;
@@ -105,8 +106,10 @@ recv_uc(struct unicast_conn *c, const rimeaddr_t *from)
 	check_bit=packet_temp[0]; //6 right shifts
 	if(check_bit==DATA) // check_bit == '0x10'
 	{
-		is_data_or_sync=DATA;
-		flag=DATA_flag;
+		if(flag != DATA_SENT_flag){
+			is_data_or_sync=DATA;
+			flag=DATA_flag;
+		}
 	}
 	else if(check_bit==SYNC_ACK) // check_bit == '0x42'
 	{
@@ -175,7 +178,7 @@ Sensor_start()
 {
 	//sending a signal to Sensor to operate
 #if DEBUGPRINT
-	printf("[app] Sensing complete\n");
+//	printf("[app] Sensing complete\n");
 #endif
 	return 1; //return sensing result
 }
@@ -184,7 +187,7 @@ Sensor_calc(int data)
 {
 	//calculate sensing data and return result value 0 or 1
 #if DEBUGPRINT
-	printf("[app] Sensing calculation complete\n");
+//	printf("[app] Sensing calculation complete\n");
 #endif
 	return 1;
 }
@@ -295,7 +298,7 @@ PROCESS_THREAD(app_layer_process, ev, data)
 		sensor_value=Sensor_start();
 		result_data=Sensor_calc(sensor_value);
 
-		PROCESS_WAIT_EVENT_UNTIL((ev==sensors_event) && (data == &button_sensor));
+//		PROCESS_WAIT_EVENT_UNTIL((ev==sensors_event) && (data == &button_sensor));
 
 		Plb_on();
 		if(rimeaddr_node_addr.u8[0]==1 && rimeaddr_node_addr.u8[1]==0)
@@ -312,7 +315,7 @@ PROCESS_THREAD(app_layer_process, ev, data)
 		{
 			  etimer_set(&et, CLOCK_SECOND/1000);
 			  PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
-			  if(flag)
+			  if( !((flag==0)||(flag == DATA_SENT_flag)) )
 			  {
 #if DEBUGPRINT
 				  printf("[app] flag value : %d\n",flag);
@@ -320,7 +323,7 @@ PROCESS_THREAD(app_layer_process, ev, data)
 				  switch(flag)
 				  {
 				  case DATA_flag:
-					  flag=0;
+					  flag=DATA_SENT_flag;
 					  packetbuf_copyfrom(data_backup,length_backup);
 					  Data_aggregation();
 					  Send(DATA);
@@ -338,16 +341,17 @@ PROCESS_THREAD(app_layer_process, ev, data)
 					  }
 					  packetbuf_clear();
 #if DEBUGPRINT
-					  printf("[app] Synchronized!!");
+					  printf("[app] Synchronized!!\n");
 #endif
 //					  print_ntp(ntp);
-					  Send(SYNC_START);
+						  Send(SYNC_START);
 					  break;
 				  case END_flag:
 					  flag=0;
 					  is_sleep_mode=1;
 					  NETSTACK_RDC.off(0);
 					  break;
+
 				  }
 			  }
 			//waiting
@@ -363,7 +367,7 @@ PROCESS_THREAD(app_layer_process, ev, data)
 	    leds_off(LEDS_RED);
 
 	    timestamp_init(&sleeptime);
-		sleeptime.sec = 10;
+		sleeptime.sec = (uint8_t)((random_rand() % 5) +1);
 	    while(!timestamp_is_empty(&sleeptime)){
 	      sclock_etimer_set_long(sc, &et, &sleeptime);
 	      PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
@@ -373,7 +377,7 @@ PROCESS_THREAD(app_layer_process, ev, data)
 	    printf("[app] sleep end\n");
 #endif
 	    leds_on(LEDS_YELLOW);
-	    etimer_set(&et, CLOCK_SECOND);
+	    etimer_set(&et, CLOCK_SECOND );
 	    PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
 	    leds_off(7);
 	}
