@@ -582,36 +582,18 @@ static int plb_send_sync_req() //kdw sync
 	rimeaddr_t * temp_addr;
 
 	packetbuf_clear();
-
 	temp_addr = &addr_next;
 
-	if ((sync_hdr_len = plb_create_header(temp_addr, SYNC_REQ)) < 0) {
-		PRINTF("ERROR: plb_create_header (plb_send_sync_req) ");
-		return -1;
+	packetbuf_copyfrom(global_dataptr_temp, temp_len);
+
+	if (plb_create_header(&addr_next, SYNC_REQ) < 0) {
+		PRINTF("ERROR: plb_create_header \n");
+		return -1; //ERROR case : -1
 	}
 
-	PRINTF("(sync) plb_send_sync [dst: %d.%d] [type: %x]\n", temp_addr->u8[0], temp_addr->u8[1], SYNC_REQ);
-	sync_len = sync_hdr_len + sync_type_len;
-	if (sync_len > (int) sizeof(sync)) {
-		// Failed to send //
-		PRINTF("plb: send failed, too large header\n");
-		return -1;
-	}
-
-	memcpy(sync, packetbuf_hdrptr(), sync_len);
-
-	// put timestamp : KJY
-	ntp_make_request(ntp, sync+sync_len);
-	sync_len += NTP_REQUEST_LEN;
-
-#if DEBUG_PACKET
-	printf("[PLB] send_req :");print_packet(sync, sync_len);
-#endif
-
-	// Send sync//
 	radio_on();
 
-	if (NETSTACK_RADIO.send(sync, sync_len) != RADIO_TX_OK)
+	if (NETSTACK_RADIO.send(packetbuf_hdrptr(), packetbuf_totlen()) != RADIO_TX_OK)
 	{
 		PRINTF("ERROR: plb ack send\n");
 		return -1;
@@ -646,7 +628,7 @@ static int plb_send_sync_ack(uint8_t type) //kdw sync
 		ntp_make_ack(ntp, packetbuf_dataptr()+1+NETWORK_HDR_SIZE, global_dataptr_temp_recv);
 
 		packetbuf_set_datalen(temp_len+1+NTP_ACK_LEN);
-
+//		packetbuf_set_datalen(temp_len+1);// add kdw 0514
 		sync_data_len = packetbuf_datalen();
 		if ((sync_hdr_len = plb_create_header_data(temp_addr, type)) < 0) {
 			PRINTF("ERROR: plb_create_header ");
@@ -982,7 +964,7 @@ static void plb_input(void) {
 			}
 			PRINTF(
 					"plb_input [src: %d.%d] [type: %x]\n", packetbuf_addr(PACKETBUF_ADDR_SENDER)->u8[0], packetbuf_addr(PACKETBUF_ADDR_SENDER)->u8[1], type);
-
+			switch (type) {
 			case BEACON_SD:
 				//		if( a_wait == 0 ){
 				plb_send_ack(BEACON_SD_ACK);

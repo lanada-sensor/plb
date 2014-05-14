@@ -69,27 +69,27 @@ typedef enum {DATA_flag=1, SYNC_flag, END_flag, DATA_SENT_flag} input_flag;
 static uint8_t result_data;
 static uint8_t is_data_or_sync;
 static input_flag flag;
-static int clock_drift;
 static uint8_t is_sleep_mode;
 static uint8_t data_backup[PACKETBUF_SIZE];
 static uint8_t length_backup;
 
 //time sync
-static struct etimer et;
+//static struct etimer et;
 static struct ntp *ntp;
 static struct sclock *sc;
 static struct timestamp sleeptime;
 
+//sleep counter
+static int sleepCnt;
+
 /*---------------------------------------------------------------------------*/
 //functions declaration
 static void Address_setup();
-static int Sensor_start();
-static uint8_t Sensor_calc(int);
 static uint8_t Plb_on();
 static uint8_t Send(uint8_t);
 static void Data_aggregation();
-static int Sync_calc();
-static void Sync_modifying(int);
+//static int Sync_calc();
+//static void Sync_modifying(int);
 
 /*---------------------------------------------------------------------------*/
 //callback functions
@@ -97,7 +97,7 @@ static void
 recv_uc(struct unicast_conn *c, const rimeaddr_t *from)
 {
 #if DEBUGPRINT
-	printf("[app] recv callback\n");
+//	printf("[app] recv callback\n");
 #endif
 	uint8_t* packet_temp;
 	uint8_t check_bit;
@@ -134,9 +134,6 @@ recv_uc(struct unicast_conn *c, const rimeaddr_t *from)
 static void
 sent_uc(struct unicast_conn *c, int status, int num_tx)
 {
-#if DEBUGPRINT
-	printf("sent callback [status : %d]\n",status);
-#endif
 	if(is_data_or_sync == SYNC_ACK){
 		flag=END_flag;
 		is_data_or_sync=SYNC_END;
@@ -172,35 +169,10 @@ Address_setup()
 	//address setting using packetbuf_set_addr
 }
 /*---------------------------------------------------------------------------*/
-//Sensor functions
-static int //return type check
-Sensor_start()
-{
-	//sending a signal to Sensor to operate
-#if DEBUGPRINT
-//	printf("[app] Sensing complete\n");
-#endif
-	return 1; //return sensing result
-}
-static uint8_t
-Sensor_calc(int data)
-{
-	//calculate sensing data and return result value 0 or 1
-#if DEBUGPRINT
-//	printf("[app] Sensing calculation complete\n");
-#endif
-	return 1;
-}
-/*---------------------------------------------------------------------------*/
 //plb signals
 static uint8_t
 Plb_on()
 {
-
-	//sending a signal to plb layer
-#if DEBUGPRINT
-	printf("[app] plb on request\n");
-#endif
 	NETSTACK_RDC.on();
 	return 1;
 }
@@ -208,12 +180,8 @@ Plb_on()
 static uint8_t
 Send(uint8_t type)
 {
-
 	if(type==DATA) //if type is DATA
 	{
-#if DEBUGPRINT
-	printf("[app] send data (%d)\n",result_data);
-#endif
 		packetbuf_set_attr(PACKETBUF_ATTR_PACKET_TYPE,DATA);
 		//send DATA to NEXT node
 		return unicast_send(&uc, packetbuf_addr(PACKETBUF_ADDR_NEXT));//TR result return
@@ -235,7 +203,6 @@ Data_aggregation()
 	uint8_t shift_amt,index; //ptr index value, the number of shift operations to apply
 	uint8_t *dataptr_temp;
 	dataptr_temp=(uint8_t *)packetbuf_dataptr();
-//	printf("Data_aggregation %d %x %x, total length %d\n",length,dataptr_temp[0],dataptr_temp[1],packetbuf_totlen());
 	if(node_num==1) //it means START node case, set DATA bits at first byte
 	{
 		dataptr_temp[0]=DATA;// first byte = 0x10
@@ -259,9 +226,6 @@ Data_aggregation()
 
 	packetbuf_set_datalen(length);
 	//data aggregation using dataptr
-#if DEBUGPRINT
-	printf("[app] received data aggregation\n");
-#endif
 }
 /*---------------------------------------------------------------------------*/
 
@@ -269,23 +233,19 @@ PROCESS_THREAD(app_layer_process, ev, data)
 {
 	int sensor_value; // type check
 	static struct etimer et;
-	//data_backup=(uint8_t*)malloc(PACKETBUF_SIZE*sizeof(uint8_t));
-	PROCESS_EXITHANDLER(unicast_close(&uc);)
 
+	PROCESS_EXITHANDLER(unicast_close(&uc);)
 	PROCESS_BEGIN();
 
 	//sync init : KJY
 	sclock_create(&sc, TYPE_CLOCK);
 	ntp_create(&ntp);
 
-#if DEBUGPRINT
-	printf("PROCESS BEGINNING\n");
-#endif
+	sleepCnt=0;
+
 	SENSORS_ACTIVATE(button_sensor);
 	unicast_open(&uc, 146, &unicast_callbacks);
-#if DEBUGPRINT
-	printf("[app] Setting a unicast channel\n");
-#endif
+
 	Address_setup();
 
 	
@@ -295,10 +255,9 @@ PROCESS_THREAD(app_layer_process, ev, data)
 		///////////////
 		// sensing part
 		///////////////
-		sensor_value=Sensor_start();
-		result_data=Sensor_calc(sensor_value);
+		result_data=1; // set result data!
+		/// sensing end ///
 
-//		PROCESS_WAIT_EVENT_UNTIL((ev==sensors_event) && (data == &button_sensor));
 
 		Plb_on();
 		if(rimeaddr_node_addr.u8[0]==1 && rimeaddr_node_addr.u8[1]==0)
@@ -307,11 +266,8 @@ PROCESS_THREAD(app_layer_process, ev, data)
 			Data_aggregation();
 			Send(DATA);
 		}
-#if DEBUGPRINT
-		printf("[app] waiting until intterupt\n");
-#endif
-		//PROCESS_WAIT_EVENT_UNTIL(is_sleep_mode);
-		while(!is_sleep_mode) // can i replace it with PROCESS_WAIT_UNTIL or some PROCESS function?
+
+		while(!is_sleep_mode)
 		{
 			  etimer_set(&et, CLOCK_SECOND/1000);
 			  PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
@@ -330,21 +286,14 @@ PROCESS_THREAD(app_layer_process, ev, data)
 					  break;
 				  case SYNC_flag:
 					  flag=0;
-					  //sync calc
 					  packetbuf_clear();
-					  packetbuf_copyfrom(data_backup,length_backup);
-					  ntp_handle_ack(ntp, packetbuf_dataptr());//KJY
 					  if (rimeaddr_node_addr.u8[0]==1 && rimeaddr_node_addr.u8[1]==0){
 						  is_sleep_mode=1;
 						  NETSTACK_RDC.off(0);
 						  break;
 					  }
 					  packetbuf_clear();
-#if DEBUGPRINT
-					  printf("[app] Synchronized!!\n");
-#endif
-//					  print_ntp(ntp);
-						  Send(SYNC_START);
+					  Send(SYNC_START);
 					  break;
 				  case END_flag:
 					  flag=0;
@@ -354,11 +303,9 @@ PROCESS_THREAD(app_layer_process, ev, data)
 
 				  }
 			  }
-			//waiting
 		}
-#if DEBUGPRINT
-		printf("[app] goto sleep mode, wake up after 21days\n");
-#endif
+		sleepCnt++;
+
 		NETSTACK_RDC.off(0);
 
 	    leds_on(LEDS_RED);
@@ -366,24 +313,26 @@ PROCESS_THREAD(app_layer_process, ev, data)
 	    PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
 	    leds_off(LEDS_RED);
 
+	    // setting sleep time
 	    timestamp_init(&sleeptime);
-		sleeptime.sec = (uint8_t)((random_rand() % 5) +1);
+		sleeptime.sec = (uint8_t)((random_rand() % 3) +1);
+		/// Sleep mode
+#if DEBUGPRINT
+		printf("[app] Sleep mode [%d]\n",sleepCnt);
+#endif
 	    while(!timestamp_is_empty(&sleeptime)){
 	      sclock_etimer_set_long(sc, &et, &sleeptime);
 	      PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
-
 	    }
+	    /// wake up
 #if DEBUGPRINT
-	    printf("[app] sleep end\n");
+	    printf("[app] wake up\n");
 #endif
 	    leds_on(LEDS_YELLOW);
 	    etimer_set(&et, CLOCK_SECOND );
 	    PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
 	    leds_off(7);
 	}
-
-
-
 	PROCESS_END();
 }
 /*---------------------------------------------------------------------------*/
